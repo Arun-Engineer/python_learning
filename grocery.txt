@@ -1,0 +1,5 @@
+Line 1: Milk
+Line 2: Egg
+Line 3: Biscuits
+Line 4: Sweets
+Line 5: Oil

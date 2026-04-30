@@ -1,0 +1,87 @@
+# A model comparison toolkit using functions and error handling
+
+models = [
+    {"name": "GPT-4", "score": 92, "price_per_1K": 0.03},
+    {"name": "Claude", "score": 88, "price_per_1K": 0.02},
+    {"name": "Gemini", "score": 90, "price_per_1K": 0.025},
+    {"name": "Llama 3", "score": 85, "price_per_1K": 0.015},
+    {"name": "Mistral", "score": 87}
+]
+
+# Task 1: Write get_price(model) that: 
+#  -Returns price_per_1K if it exists
+#  -Returns "N/A" if the key is missing
+#  -Use try/except
+
+def get_price(model_name , models):
+    for i in models:
+        if i['name'] == model_name:
+            try:
+                price = i['price_per_1K']
+                return price
+            except KeyError:
+                return "N/A"
+    return "Model Not Available"
+        
+print(get_price("Mistral", models))
+print(get_price("Llama 3", models))
+
+# Task2: Write estimate_cost(model, tokens=1000)
+# -uses get_price() to get the price
+# -Returns the cost, or None if price is "N/A"
+
+def get_price(model_name, models, token=1000):
+    for i in models:
+        if i['name'] == model_name:
+            try:
+                price = i['price_per_1K']
+                cost = price * (token/1000)
+                return cost
+            except KeyError:
+                return "N/A"
+    return "Model Not Available"
+
+print(get_price("Mistral", models))
+print(get_price("Claude", models))
+
+# Task3: Write compare_models(models) that:
+# -Returns list of dicts like:
+# {"name": "GPT-4", "score": 92, "price_per_1K": 0.03}
+# -Handles missing prices gracefully 
+
+def model_comparison(models):
+    results = []
+    for model in models:
+        summary = {
+            "name": model["name"],
+            "score": model["score"],
+            "cost_1k": get_price(model)
+        }
+        results.append(summary)
+    return results
+
+comparison = model_comparison(models)
+for item in comparison:
+    print(item)
+
+# Task 4: Write best_value(models) that
+# -Finds best score to price ratio
+# -Skips free or missing price models
+# - Returns the model name
+
+def best_value(models):
+    """Find model with best score to price ratio"""
+
+    valid = []
+    for i in models:
+        price = get_price(i)
+        if price != "N/A" and price > 0:
+            valid.append(i)
+
+    if len(valid) ==0:
+        return "NOr models with pricing available"
+    
+    best = max(valid, key= lambda i : i["score"] / i["price_per_1K"])
+    return best["name"]
+
+print(best_value(models))
