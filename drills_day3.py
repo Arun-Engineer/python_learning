@@ -88,3 +88,14 @@ def is_critical_bug(bugs):
     return count
 
 print(is_critical_bug(bugs))
+
+# day 3 refactor of drill 7
+def is_critical_bug(bug):
+    return bug["status"] == "open" and bug ["severity"] >=4
+def get_critical_bugs(bugs):
+    count = 0
+    for bug in bugs:
+        if is_critical_bug(bug):
+            count = count + 1
+    return count
+
