@@ -98,4 +98,19 @@ def get_critical_bugs(bugs):
         if is_critical_bug(bug):
             count = count + 1
     return count
+# day 3 refactor 3 layer version
+def is_critical_bug(bug):
+    return bug["status"] == "open" and bug["severity"] >= 3
+def get_critical_bugs(bugs):
+    result = []
+    for bug in bugs:
+        if is_critical_bug(bug):
+            result.append(bug)
+    return result
+def count_critical_bug(bugs):
+    count = 0
+    for bug in bugs:
+        if is_critical_bug(bug):
+            count = count + 1
+    return count
 
