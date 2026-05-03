@@ -172,10 +172,10 @@ def is_critical_bug(bugs1):
         return bugs1["status"] == "open" and bugs1["severity"] >= 4
     except KeyError:
         print("Bug['Status'] key is missing")
-        return None
+        return False
     except TypeError:
         print(f"{type(bugs1['severity'])} value error. expected vlaue int type.")
-        return None
+        return False
 
 print(is_critical_bug({"id":1, "title": "Login crash on IOS", "severity": 5, "status": "open", "team": "mobile"}))
 print(is_critical_bug({"id":2, "title": "Typo on homepage", "severity": 1, "team": "web"}))
