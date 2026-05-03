@@ -1,6 +1,6 @@
 import json
 
-bugs = [
+seed_bugs = [
     {"id":1, "title": "Login crash on IOS", "severity": 5, "status": "open", "team": "mobile"},
     {"id":2, "title": "Typo on homepage", "severity": 1, "status": "open", "team": "web"},
     {"id":3, "title": "Payment timeout", "severity": 5, "status": "open", "team": "backend"},
@@ -15,15 +15,17 @@ def load_bugs(filename):
     try:
         with open(filename, "r")as f:
             loaded_bug = json.load(f)
-        return loaded_bug
+            return loaded_bug
     except FileNotFoundError:
         print("No previous bugs found - starting fresh")
+        save_bugs(seed_bugs,filename)
+        return seed_bugs
     except json.JSONDecodeError:
         print(f"file '{filename}' is corrupted - starting fresh")
+        return []
     
-    return None
 
-print(load_bugs("bug.json"))
+#print(load_bugs("bug.json"))
 
 def save_bugs(bugs, filename):
     try:
@@ -33,7 +35,7 @@ def save_bugs(bugs, filename):
     except FileNotFoundError:
         print("File not found")
 
-print(save_bugs(bugs, "bug.json"))
+#print(save_bugs(bugs, "bug.json"))
 
 new_bugs = [
     {"id":9, "title": "Login crash on Android", "severity": 3, "status": "open", "team": "mobile"},
@@ -129,3 +131,10 @@ def bug_report_from_json(filename):
 
 
 bug_report_from_json("bug.json")
+
+# refactored add- bugs
+def add_bugs(filename, new_bugs):
+    existing_bugs = load_bugs(filename)
+    updated_bugs = existing_bugs + new_bugs
+    save_bugs(existing_bugs, filename)
+    return updated_bugs
