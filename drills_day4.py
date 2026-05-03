@@ -110,3 +110,72 @@ def is_critical_bug(bugs1):
 print(is_critical_bug({"id":1, "title": "Login crash on IOS", "severity": 5, "status": "open", "team": "mobile"}))
 print(is_critical_bug({"id":2, "title": "Typo on homepage", "severity": 1, "team": "web"}))
 print(is_critical_bug({"id":3, "title": "Payment timeout", "severity": "high", "status": "open", "team": "backend"}))
+
+# Drill 1: Refactor
+def safe_get(d, key, default):
+    try:
+        return d[key]
+    except KeyError:
+        print("The given {key}key is found to be missing")
+        return default
+    
+print(safe_get({'id': 1, 'title': 'Login crash on IOS', 'severity': 5, 'status': 'open', 'team': 'mobile'}, "team", -1))
+print(safe_get({'id': 1, 'title': 'Login crash on IOS', 'severity': 5, 'status': 'open'}, "team", -1))
+
+
+# Drill 2 Refactor
+
+def to_int(value):
+    try:
+        return int(value)
+    except ValueError:
+        print(f"This is a {type(value)} error, so we have change it to required int type value")
+        return None
+    except TypeError:
+        print("This a Type error")
+        return None
+print(to_int("5"))
+print(to_int("abc"))
+print(to_int(None))
+print(to_int(5))
+
+# Drill 3 i missed unkowingly
+def safe_index(lst, i):
+    try:
+        return lst[i]
+    except IndexError:
+        return None
+    
+print(safe_index([1,2,3], 0))
+print(safe_index([1,2,3], 5))
+print(safe_index([1,2,3], -1))
+
+# Drill 5 refractor
+def load_bugs(filename):
+    try:
+        with open(filename, "r")as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print(f"File {filename} not found.")
+        return None
+
+# Test the round
+save_bugs(bugs, "bug.json")
+loaded = load_bugs("bug.json")
+assert bugs == loaded
+print("Round Trip Passed")
+
+# Drill 7 Refactor
+
+def is_critical_bug(bugs1):
+    try:
+        return bugs1["status"] == "open" and bugs1["severity"] >= 4
+    except KeyError:
+        print("Bug['Status'] key is missing")
+        return None
+    except TypeError:
+        print(f"{type(bugs1['severity'])} value error. expected vlaue int type.")
+        return None
+
+print(is_critical_bug({"id":1, "title": "Login crash on IOS", "severity": 5, "status": "open", "team": "mobile"}))
+print(is_critical_bug({"id":2, "title": "Typo on homepage", "severity": 1, "team": "web"}))
