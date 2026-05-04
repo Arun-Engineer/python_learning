@@ -28,12 +28,10 @@ def load_bugs(filename):
 #print(load_bugs("bug.json"))
 
 def save_bugs(bugs, filename):
-    try:
-        with open (filename, "w")as f:
-            json.dump(bugs, f, indent=2)
-        print("Bug added to file successfully")
-    except FileNotFoundError:
-        print("File not found")
+
+    with open (filename, "w")as f:
+        json.dump(bugs, f, indent=2)
+    print("Bug added to file successfully")
 
 #print(save_bugs(bugs, "bug.json"))
 
@@ -41,6 +39,11 @@ new_bugs = [
     {"id":9, "title": "Login crash on Android", "severity": 3, "status": "open", "team": "mobile"},
     {"id":10, "title": "Typo on PDP", "severity": 2, "status": "closed", "team": "web"}
 ]
+
+def next_bug_id(bugs):
+    if not bugs:
+        return 1
+    return max(bug["id"] for bug in bugs) + 1
 
 def add_bugs(filename, new_bugs):
     existing_bugs = load_bugs(filename)
