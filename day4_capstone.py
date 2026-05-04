@@ -1,65 +1,66 @@
 import json
 
 seed_bugs = [
-    {"id":1, "title": "Login crash on IOS", "severity": 5, "status": "open", "team": "mobile"},
-    {"id":2, "title": "Typo on homepage", "severity": 1, "status": "open", "team": "web"},
-    {"id":3, "title": "Payment timeout", "severity": 5, "status": "open", "team": "backend"},
-    {"id":4, "title": "Logo color wrong", "severity": 1, "status": "closed", "team": "web"},
-    {"id":5, "title": "API returns 500", "severity": 4, "status": "open", "team": "backend"},
-    {"id":6, "title": "Slow scroll on Android", "severity": 3, "status": "open", "team": "mobile"},
-    {"id":7, "title": "Forget password broken", "severity": 4, "status": "closed", "team": "backend"},
-    {"id":8, "title": "Footer link 404", "severity": 2, "status": "open", "team": "web"},
+    {"id": 1, "title": "Login crash on IOS", "severity": 5, "status": "open", "team": "mobile"},
+    {"id": 2, "title": "Typo on homepage", "severity": 1, "status": "open", "team": "web"},
+    {"id": 3, "title": "Payment timeout", "severity": 5, "status": "open", "team": "backend"},
+    {"id": 4, "title": "Logo color wrong", "severity": 1, "status": "closed", "team": "web"},
+    {"id": 5, "title": "API returns 500", "severity": 4, "status": "open", "team": "backend"},
+    {"id": 6, "title": "Slow scroll on Android", "severity": 3, "status": "open", "team": "mobile"},
+    {"id": 7, "title": "Forget password broken", "severity": 4, "status": "closed", "team": "backend"},
+    {"id": 8, "title": "Footer link 404", "severity": 2, "status": "open", "team": "web"},
 ]
+
+
+def save_bugs(bugs, filename):
+    with open(filename, "w") as f:
+        json.dump(bugs, f, indent=2)
+
+    print("Bugs saved successfully")
+
 
 def load_bugs(filename):
     try:
-        with open(filename, "r")as f:
-            loaded_bug = json.load(f)
-            return loaded_bug
+        with open(filename, "r") as f:
+            loaded_bugs = json.load(f)
+
+        return loaded_bugs
+
     except FileNotFoundError:
         print("No previous bugs found - starting fresh")
-        save_bugs(seed_bugs,filename)
-        return seed_bugs
+        save_bugs(seed_bugs, filename)
+        return seed_bugs.copy()
+
     except json.JSONDecodeError:
-        print(f"file '{filename}' is corrupted - starting fresh")
-        return []
-    
+        print(f"File '{filename}' is corrupted - resetting fresh")
+        save_bugs(seed_bugs, filename)
+        return seed_bugs.copy()
 
-#print(load_bugs("bug.json"))
-
-def save_bugs(bugs, filename):
-
-    with open (filename, "w")as f:
-        json.dump(bugs, f, indent=2)
-    print("Bug added to file successfully")
-
-#print(save_bugs(bugs, "bug.json"))
-
-new_bugs = [
-    {"id":9, "title": "Login crash on Android", "severity": 3, "status": "open", "team": "mobile"},
-    {"id":10, "title": "Typo on PDP", "severity": 2, "status": "closed", "team": "web"}
-]
 
 def next_bug_id(bugs):
     if not bugs:
         return 1
+
     return max(bug["id"] for bug in bugs) + 1
 
-# refactored add- bugs
-def add_bugs(filename, new1_bugs):
-    existing_bugs = load_bugs(filename)
-    updated_bugs = existing_bugs + new1_bugs
-    save_bugs(existing_bugs, filename)
-    return updated_bugs
-new1_bugs = {"Login crash on Android", "3", "open", "mobile"}
-print(add_bugs("bug.json", new1_bugs))
 
-def add_bugs(filename, new_bugs):
+def add_bug(filename, title, severity, status, team):
     existing_bugs = load_bugs(filename)
-    existing_bugs.extend(new_bugs)
+
+    new_bug = {
+        "id": next_bug_id(existing_bugs),
+        "title": title,
+        "severity": int(severity),
+        "status": status,
+        "team": team
+    }
+
+    existing_bugs.append(new_bug)
+
     save_bugs(existing_bugs, filename)
 
-#print(add_bugs("bug.json", new_bugs))
+    return new_bug
+
 
 def get_bug_counts_by_status(bugs):
     bugs_count_status = {}
@@ -142,5 +143,11 @@ def bug_report_from_json(filename):
     print("=" * 10, "END OF REPORT", "=" * 10)
 
 
-bug_report_from_json("bug.json")
+# Add one bug into bug.json
+added_bug = add_bug("bug.json", "Login crash on Android", 3, "open", "mobile")
 
+print("Added bug:")
+print(added_bug)
+
+# Generate report from bug.json
+bug_report_from_json("bug.json")
