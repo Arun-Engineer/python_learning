@@ -54,5 +54,19 @@
     "severity": 2,
     "status": "open",
     "team": "web"
+  },
+  {
+    "id": 9,
+    "title": "Login crash on Android",
+    "severity": 3,
+    "status": "open",
+    "team": "mobile"
+  },
+  {
+    "id": 10,
+    "title": "Login crash on Android",
+    "severity": 3,
+    "status": "open",
+    "team": "mobile"
   }
 ]
