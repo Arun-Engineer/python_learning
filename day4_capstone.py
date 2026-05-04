@@ -45,12 +45,21 @@ def next_bug_id(bugs):
         return 1
     return max(bug["id"] for bug in bugs) + 1
 
+# refactored add- bugs
+def add_bugs(filename, new1_bugs):
+    existing_bugs = load_bugs(filename)
+    updated_bugs = existing_bugs + new1_bugs
+    save_bugs(existing_bugs, filename)
+    return updated_bugs
+new1_bugs = {"Login crash on Android", "3", "open", "mobile"}
+print(add_bugs("bug.json", new1_bugs))
+
 def add_bugs(filename, new_bugs):
     existing_bugs = load_bugs(filename)
     existing_bugs.extend(new_bugs)
     save_bugs(existing_bugs, filename)
 
-print(add_bugs("bug.json", new_bugs))
+#print(add_bugs("bug.json", new_bugs))
 
 def get_bug_counts_by_status(bugs):
     bugs_count_status = {}
@@ -135,9 +144,3 @@ def bug_report_from_json(filename):
 
 bug_report_from_json("bug.json")
 
-# refactored add- bugs
-def add_bugs(filename, new_bugs):
-    existing_bugs = load_bugs(filename)
-    updated_bugs = existing_bugs + new_bugs
-    save_bugs(existing_bugs, filename)
-    return updated_bugs
