@@ -47,11 +47,10 @@ class Stack():
         self.items.append(item)
     
     def pop(self):
-        if self.items != None:
-            self.items.pop()
-            return (item for item in self.items)
+        if len(self.items) > 0:
+            return self.items.pop()
         else:
-            return False
+            return None
     
     def peek(self):
         if self.items != None:
