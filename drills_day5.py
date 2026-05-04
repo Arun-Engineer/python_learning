@@ -53,7 +53,7 @@ class Stack():
             return None
     
     def peek(self):
-        if self.items != None:
+        if self.items:
             return self.items[-1]
         else:
             return False
