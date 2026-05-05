@@ -73,3 +73,16 @@ with open("models.json", "r")as f:
 
 print(loaded_models[0]["name"])
 print(type(loaded_models))
+
+# Convert between JSON string and python dict
+
+import json
+
+data = {"name": "claude", "score": 90}
+# Dict ---> JSON string (for sending to APIs)
+json_string = json.dunps(data)
+print(json_string)
+print(type(json_string))
+
+#JSON string ---> Dict(for reading API responses)
+json.loads()
