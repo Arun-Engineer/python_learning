@@ -68,5 +68,47 @@
     "severity": 3,
     "status": "open",
     "team": "mobile"
+  },
+  {
+    "id": 11,
+    "title": "Login crash on Android",
+    "severity": 3,
+    "status": "open",
+    "team": "mobile"
+  },
+  {
+    "id": 12,
+    "title": "Search broken on Safari",
+    "severity": 4,
+    "status": "open",
+    "team": "web"
+  },
+  {
+    "id": 13,
+    "title": "Cart drops items",
+    "severity": 5,
+    "status": "open",
+    "team": "backend"
+  },
+  {
+    "id": 14,
+    "title": "Login crash on Android",
+    "severity": 3,
+    "status": "open",
+    "team": "mobile"
+  },
+  {
+    "id": 15,
+    "title": "Search broken on Safari",
+    "severity": 4,
+    "status": "open",
+    "team": "web"
+  },
+  {
+    "id": 16,
+    "title": "Cart drops items",
+    "severity": 5,
+    "status": "open",
+    "team": "backend"
   }
 ]
