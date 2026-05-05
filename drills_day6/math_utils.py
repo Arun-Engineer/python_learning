@@ -11,7 +11,7 @@ def factorial(n):
             result = result * i
         return result
     
-def prime(n):
+def is_prime(n):
     if n < 2:
         return False
     else:
