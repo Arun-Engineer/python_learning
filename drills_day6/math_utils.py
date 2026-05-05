@@ -23,4 +23,4 @@ def is_prime(n):
 if __name__ == "__main__":
     print(square(4))
     print(factorial(5))
-    print(prime(9))
+    print(is_prime(9))
