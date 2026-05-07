@@ -1,0 +1,38 @@
+Bug(id=1, title='Test', severity=5, status='open', team='mobile')
+Test
+5
+Bugs saved successfully
+Bugs saved successfully
+Bugs saved successfully
+Added bugs:
+Bug(id=23, title='Login crash on Android', severity=3, status='open', team='mobile')
+Bug(id=24, title='Search broken on Safari', severity=4, status='open', team='web')
+Bug(id=25, title='Cart drops items', severity=5, status='open', team='backend')
+
+========== BUG REPORT ==========
+
+Total_bugs: 25
+Open_bugs: 23
+Closed_bugs: 2
+
+CRITICAL BUGS NEEDING ATTENTION (open + severity >= 4)
+- Bug id: 1 Title: Login crash on IOS Severity: 5 Team: mobile
+- Bug id: 3 Title: Payment timeout Severity: 5 Team: backend
+- Bug id: 5 Title: API returns 500 Severity: 4 Team: backend
+- Bug id: 12 Title: Search broken on Safari Severity: 4 Team: web
+- Bug id: 13 Title: Cart drops items Severity: 5 Team: backend
+- Bug id: 15 Title: Search broken on Safari Severity: 4 Team: web
+- Bug id: 16 Title: Cart drops items Severity: 5 Team: backend
+- Bug id: 18 Title: Search broken on Safari Severity: 4 Team: web
+- Bug id: 19 Title: Cart drops items Severity: 5 Team: backend
+- Bug id: 21 Title: Search broken on Safari Severity: 4 Team: web
+- Bug id: 22 Title: Cart drops items Severity: 5 Team: backend
+- Bug id: 24 Title: Search broken on Safari Severity: 4 Team: web
+- Bug id: 25 Title: Cart drops items Severity: 5 Team: backend
+
+Bugs by team (open only):
+- mobile: 9
+- web: 7
+- backend: 7
+
+========== END OF REPORT ==========

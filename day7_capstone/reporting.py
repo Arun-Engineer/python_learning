@@ -56,10 +56,10 @@ def format_report(bugs: list[Bug]) -> Optional[dict]:
     else:
         for critical_bug in critical_bugs:
             print(
-                f"- Bug id: {critical_bug['id']} "
-                f"Title: {critical_bug['title']} "
-                f"Severity: {critical_bug['severity']} "
-                f"Team: {critical_bug['team']}"
+                f"- Bug id: {critical_bug.id} "
+                f"Title: {critical_bug.title} "
+                f"Severity: {critical_bug.severity} "
+                f"Team: {critical_bug.team}"
             )
 
     print()
