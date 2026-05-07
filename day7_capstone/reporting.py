@@ -1,7 +1,8 @@
+from models import Bug
 from typing import Optional
 
-def get_critical_bugs(bugs: list[dict]) -> Optional[dict]:
-    critical_bugs = []
+def get_critical_bugs(bugs: list[Bug]) -> list[Bug]:
+    critical_bugs: list[Bug] = []
 
     for bug in bugs:
         if bug["status"] == "open" and bug["severity"] >= 4:
@@ -9,8 +10,8 @@ def get_critical_bugs(bugs: list[dict]) -> Optional[dict]:
 
     return critical_bugs
 
-def get_bug_counts_by_status(bugs: list[dict]) -> Optional[dict]:
-    bug_count_status = {}
+def get_bug_counts_by_status(bugs: list[Bug]) -> dict[str, int]:
+    bug_count_status: dict[str, int] = {}
 
     for bug in bugs:
         bug_status = bug.get("status")
@@ -20,8 +21,8 @@ def get_bug_counts_by_status(bugs: list[dict]) -> Optional[dict]:
 
     return bug_count_status
 
-def count_open_bugs_by_team(bugs: list[dict]) -> Optional[dict]:
-    open_bug_count = {}
+def count_open_bugs_by_team(bugs: list[Bug]) -> dict[str, int]:
+    open_bug_count: dict[str, int] = {}
 
     for bug in bugs:
         if bug["status"] == "open":
@@ -30,7 +31,7 @@ def count_open_bugs_by_team(bugs: list[dict]) -> Optional[dict]:
 
     return open_bug_count
 
-def format_report(bugs: list[dict]) -> Optional[dict]:
+def format_report(bugs: list[Bug]) -> Optional[dict]:
     print()
     print("=" * 10, "BUG REPORT", "=" * 10)
     print()
