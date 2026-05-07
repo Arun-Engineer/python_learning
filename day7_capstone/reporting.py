@@ -5,7 +5,7 @@ def get_critical_bugs(bugs: list[Bug]) -> list[Bug]:
     critical_bugs: list[Bug] = []
 
     for bug in bugs:
-        if bug["status"] == "open" and bug["severity"] >= 4:
+        if bug.status == "open" and bug.severity >= 4:
             critical_bugs.append(bug)
 
     return critical_bugs
@@ -14,7 +14,7 @@ def get_bug_counts_by_status(bugs: list[Bug]) -> dict[str, int]:
     bug_count_status: dict[str, int] = {}
 
     for bug in bugs:
-        bug_status = bug.get("status")
+        bug_status = bug.status
 
         if bug_status is not None:
             bug_count_status[bug_status] = bug_count_status.get(bug_status, 0) + 1
@@ -25,8 +25,8 @@ def count_open_bugs_by_team(bugs: list[Bug]) -> dict[str, int]:
     open_bug_count: dict[str, int] = {}
 
     for bug in bugs:
-        if bug["status"] == "open":
-            team = bug["team"]
+        if bug.status == "open":
+            team = bug.team
             open_bug_count[team] = open_bug_count.get(team, 0) + 1
 
     return open_bug_count

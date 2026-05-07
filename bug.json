@@ -110,5 +110,26 @@
     "severity": 5,
     "status": "open",
     "team": "backend"
+  },
+  {
+    "id": 17,
+    "title": "Login crash on Android",
+    "severity": 3,
+    "status": "open",
+    "team": "mobile"
+  },
+  {
+    "id": 18,
+    "title": "Search broken on Safari",
+    "severity": 4,
+    "status": "open",
+    "team": "web"
+  },
+  {
+    "id": 19,
+    "title": "Cart drops items",
+    "severity": 5,
+    "status": "open",
+    "team": "backend"
   }
 ]
