@@ -19,3 +19,6 @@ def test_add_bug():
     assert new.severity == 5
     assert new.status == "open"
     assert new.team == "mobile"
+
+def test_next_bug_id_after_add():
+    assert track.next_bug_id == 6
