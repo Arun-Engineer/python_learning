@@ -23,6 +23,6 @@ def test_bug_equality():
 def test_bug_inequality():
     """Two Bugs with different fields are not equal."""
     bug1 = Bug(id=1, title= "X", severity= 5, status= "open", team= "mobile")
-    bug2 = Bug(id=1, title= "X", severity= 5, status= "open", team= "mobile")
+    bug2 = Bug(id=2, title= "X", severity= 4, status= "open", team= "web")
 
     assert bug1 != bug2
