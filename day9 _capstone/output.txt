@@ -1,0 +1,18 @@
+[Running] python -u "d:\Automation\python_learning\day9 _capstone\module_a.py"
+2026-05-10 12:39:39 [DEBUG] __main__: Dividing 10 by 2
+5.0
+2026-05-10 12:39:39 [INFO] __main__: Result: 5.0
+2026-05-10 12:39:39 [DEBUG] __main__: Dividing 10 by 0
+2026-05-10 12:39:39 [WARNING] __main__: ERROR: cannot divide by Zero
+None
+
+[Running] python -u "d:\Automation\python_learning\day9 _capstone\module_b.py"
+2026-05-10 12:42:42 [INFO] __main__: Starting item processing
+2026-05-10 12:42:42 [DEBUG] __main__: Processing item: a
+2026-05-10 12:42:42 [INFO] __main__: Current count: 1
+2026-05-10 12:42:42 [DEBUG] __main__: Processing item: b
+2026-05-10 12:42:42 [INFO] __main__: Current count: 2
+2026-05-10 12:42:42 [DEBUG] __main__: Processing item: c
+2026-05-10 12:42:42 [INFO] __main__: Current count: 3
+2026-05-10 12:42:42 [INFO] __main__: Finished processing. Total items: 3
+3
