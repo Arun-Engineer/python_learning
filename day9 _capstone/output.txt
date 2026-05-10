@@ -88,3 +88,79 @@ cannot be converted
 -5
 2026-05-10 13:02:01 [DEBUG] root: Converting value = -5 to integer
 2026-05-10 13:02:01 [INFO] root: value = -5 is safely converted to integer -5
+
+[Running] python -u "d:\Automation\python_learning\day9 _capstone\main.py"
+2026-05-10 13:09:51 [DEBUG] module_a: Dividing 10 by 2
+2026-05-10 13:09:51 [INFO] module_a: Result: 5.0
+2026-05-10 13:09:51 [DEBUG] module_a: Dividing 10 by 0
+2026-05-10 13:09:51 [WARNING] module_a: ERROR: cannot divide by Zero
+2026-05-10 13:09:51 [INFO] module_b: Starting item processing
+5.0
+None
+2026-05-10 13:09:51 [DEBUG] module_b: Processing item: a
+2026-05-10 13:09:51 [INFO] module_b: Current count: 1
+2026-05-10 13:09:51 [DEBUG] module_b: Processing item: b
+2026-05-10 13:09:51 [INFO] module_b: Current count: 2
+2026-05-10 13:09:51 [DEBUG] module_b: Processing item: c
+2026-05-10 13:09:51 [INFO] module_b: Current count: 3
+2026-05-10 13:09:51 [INFO] module_b: Finished processing. Total items: 3
+3
+
+[Running] python -u "d:\Automation\python_learning\day9 _capstone\main1.py"
+Bug(id=1, title='Test', severity=5, status='open', team='mobile')
+Test
+5
+2026-05-10 15:41:32 [DEBUG] persistence loading bugs from bug.json
+2026-05-10 15:41:32 [INFO] persistence Loaded 25 bugs from bug.json
+2026-05-10 15:41:32 [INFO] bug_tracker 26 this is the next bug id
+2026-05-10 15:41:32 [INFO] bug_tracker adding bugs to the list
+2026-05-10 15:41:32 [INFO] bug_tracker Saving bugs in bug.json
+2026-05-10 15:41:32 [DEBUG] persistence Saving 26 bugs to bug.json
+2026-05-10 15:41:32 [INFO] persistence Saved 26 bugs to bug.json
+Added bug:
+Bug(id=26, title='Search broken on Safari', severity=4, status='open', team='web')
+
+========== BUG REPORT ==========
+
+Total_bugs: 26
+Open_bugs: 24
+Closed_bugs: 2
+
+CRITICAL BUGS NEEDING ATTENTION (open + severity >= 4)
+- Bug id: 1 Title: Login crash on IOS Severity: 5 Team: mobile
+- Bug id: 3 Title: Payment timeout Severity: 5 Team: backend
+- Bug id: 5 Title: API returns 500 Severity: 4 Team: backend
+- Bug id: 12 Title: Search broken on Safari Severity: 4 Team: web
+- Bug id: 13 Title: Cart drops items Severity: 5 Team: backend
+- Bug id: 15 Title: Search broken on Safari Severity: 4 Team: web
+- Bug id: 16 Title: Cart drops items Severity: 5 Team: backend
+- Bug id: 18 Title: Search broken on Safari Severity: 4 Team: web
+- Bug id: 19 Title: Cart drops items Severity: 5 Team: backend
+- Bug id: 21 Title: Search broken on Safari Severity: 4 Team: web
+- Bug id: 22 Title: Cart drops items Severity: 5 Team: backend
+- Bug id: 24 Title: Search broken on Safari Severity: 4 Team: web
+- Bug id: 25 Title: Cart drops items Severity: 5 Team: backend
+- Bug id: 26 Title: Search broken on Safari Severity: 4 Team: web
+
+Bugs by team (open only):
+- mobile: 9
+- web: 8
+- backend: 7
+
+========== END OF REPORT ==========
+None
+
+================== test session starts ===================
+platform win32 -- Python 3.14.0, pytest-9.0.2, pluggy-1.6.0
+rootdir: D:\Automation\python_learning\day9 _capstone
+plugins: anyio-4.12.1, langsmith-0.6.8, asyncio-1.3.0, base-url-2.1.0, cov-7.0.0, html-4.2.0, json-report-1.5.0, metadata-3.1.1, playwright-0.7.2
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 20 items                                         
+
+test_bug_tracker.py ..                               [ 10%]
+test_drills.py ........                              [ 50%]
+test_models.py ...                                   [ 65%]
+test_persistence.py ..                               [ 75%]
+test_reporting.py .....                              [100%]
+
+=================== 20 passed in 0.44s ====================

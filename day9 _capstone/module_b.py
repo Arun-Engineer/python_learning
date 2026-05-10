@@ -26,4 +26,4 @@ def process_items(items):
     return count
 
 
-print(process_items(["a", "b", "c"]))
+#print(process_items(["a", "b", "c"]))

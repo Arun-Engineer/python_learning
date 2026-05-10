@@ -173,5 +173,12 @@
     "severity": 5,
     "status": "open",
     "team": "backend"
+  },
+  {
+    "id": 26,
+    "title": "Search broken on Safari",
+    "severity": 4,
+    "status": "open",
+    "team": "web"
   }
 ]
