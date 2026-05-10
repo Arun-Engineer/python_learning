@@ -1,18 +1,90 @@
-[Running] python -u "d:\Automation\python_learning\day9 _capstone\module_a.py"
-2026-05-10 12:39:39 [DEBUG] __main__: Dividing 10 by 2
-5.0
-2026-05-10 12:39:39 [INFO] __main__: Result: 5.0
-2026-05-10 12:39:39 [DEBUG] __main__: Dividing 10 by 0
-2026-05-10 12:39:39 [WARNING] __main__: ERROR: cannot divide by Zero
-None
-
-[Running] python -u "d:\Automation\python_learning\day9 _capstone\module_b.py"
-2026-05-10 12:42:42 [INFO] __main__: Starting item processing
-2026-05-10 12:42:42 [DEBUG] __main__: Processing item: a
-2026-05-10 12:42:42 [INFO] __main__: Current count: 1
-2026-05-10 12:42:42 [DEBUG] __main__: Processing item: b
-2026-05-10 12:42:42 [INFO] __main__: Current count: 2
-2026-05-10 12:42:42 [DEBUG] __main__: Processing item: c
-2026-05-10 12:42:42 [INFO] __main__: Current count: 3
-2026-05-10 12:42:42 [INFO] __main__: Finished processing. Total items: 3
+[Running] python -u "d:\Automation\python_learning\day9 _capstone\main.py"
+2026-05-10 13:05:00 [INFO] module_b: Starting item processing
+2026-05-10 13:05:00 [DEBUG] module_b: Processing item: a
+2026-05-10 13:05:00 [INFO] module_b: Current count: 1
+2026-05-10 13:05:00 [DEBUG] module_b: Processing item: b
+2026-05-10 13:05:00 [INFO] module_b: Current count: 2
+2026-05-10 13:05:00 [DEBUG] module_b: Processing item: c
+2026-05-10 13:05:00 [INFO] module_b: Current count: 3
+2026-05-10 13:05:00 [INFO] module_b: Finished processing. Total items: 3
 3
+2026-05-10 13:05:00 [DEBUG] module_a: Dividing 10 by 2
+2026-05-10 13:05:00 [INFO] module_a: Result: 5.0
+2026-05-10 13:05:00 [DEBUG] module_a: Dividing 10 by 0
+5.0
+None
+2026-05-10 13:05:00 [WARNING] module_a: ERROR: cannot divide by Zero
+2026-05-10 13:05:00 [INFO] module_b: Starting item processing
+2026-05-10 13:05:00 [DEBUG] module_b: Processing item: a
+2026-05-10 13:05:00 [INFO] module_b: Current count: 1
+2026-05-10 13:05:00 [DEBUG] module_b: Processing item: b
+2026-05-10 13:05:00 [INFO] module_b: Current count: 2
+2026-05-10 13:05:00 [DEBUG] module_b: Processing item: c
+3
+2026-05-10 13:05:00 [INFO] module_b: Current count: 3
+2026-05-10 13:05:00 [INFO] module_b: Finished processing. Total items: 3
+
+drill3
+2026-05-10 13:02:01 [DEBUG] root: Converting value = 42 to integer
+--- Logging error ---
+5.0
+None
+Traceback (most recent call last):
+  File "C:\Users\WELCOME\AppData\Local\Programs\Python\Python314\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\WELCOME\AppData\Local\Programs\Python\Python314\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\WELCOME\AppData\Local\Programs\Python\Python314\Lib\logging\__init__.py", line 712, in format
+    record.message = record.getMessage()
+                     ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\WELCOME\AppData\Local\Programs\Python\Python314\Lib\logging\__init__.py", line 400, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: %d format: a real number is required, not str
+Call stack:
+  File "d:\Automation\python_learning\day9 _capstone\drills_day9.py", line 49, in <module>
+    print(safe_int("42"))
+  File "d:\Automation\python_learning\day9 _capstone\drills_day9.py", line 43, in safe_int
+    logging.info("value = %d is safely converted to integer %r", value, dig)
+Message: 'value = %d is safely converted to integer %r'
+Arguments: ('42', 42)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\WELCOME\AppData\Local\Programs\Python\Python314\Lib\logging\__init__.py", line 1151, in emit
+    msg = self.format(record)
+  File "C:\Users\WELCOME\AppData\Local\Programs\Python\Python314\Lib\logging\__init__.py", line 999, in format
+    return fmt.format(record)
+           ~~~~~~~~~~^^^^^^^^
+  File "C:\Users\WELCOME\AppData\Local\Programs\Python\Python314\Lib\logging\__init__.py", line 712, in format
+    record.message = record.getMessage()
+                     ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\WELCOME\AppData\Local\Programs\Python\Python314\Lib\logging\__init__.py", line 400, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: %d format: a real number is required, not str
+Call stack:
+  File "d:\Automation\python_learning\day9 _capstone\drills_day9.py", line 49, in <module>
+    print(safe_int("42"))
+  File "d:\Automation\python_learning\day9 _capstone\drills_day9.py", line 43, in safe_int
+    logging.info("value = %d is safely converted to integer %r", value, dig)
+Message: 'value = %d is safely converted to integer %r'
+Arguments: ('42', 42)
+2026-05-10 13:02:01 [DEBUG] root: Converting value = hello to integer
+42
+cannot be converted
+2026-05-10 13:02:01 [ERROR] root: Value 'hello' cannot be converted to integer
+Traceback (most recent call last):
+  File "d:\Automation\python_learning\day9 _capstone\drills_day9.py", line 42, in safe_int
+    dig = int(value)
+ValueError: invalid literal for int() with base 10: 'hello'
+2026-05-10 13:02:01 [DEBUG] root: Converting value = None to integer
+2026-05-10 13:02:01 [ERROR] root: Value None cannot be converted to integer
+Traceback (most recent call last):
+  File "d:\Automation\python_learning\day9 _capstone\drills_day9.py", line 42, in safe_int
+    dig = int(value)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+cannot be converted
+-5
+2026-05-10 13:02:01 [DEBUG] root: Converting value = -5 to integer
+2026-05-10 13:02:01 [INFO] root: value = -5 is safely converted to integer -5

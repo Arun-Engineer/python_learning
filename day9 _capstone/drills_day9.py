@@ -26,7 +26,7 @@ logging.basicConfig(
 def divide(a, b):
     logging.debug("Dividing %d by %d", a, b)
     if b == 0:
-        logging.warning("ERROR: cannot divide by Zero")
+        logging.error("ERROR: cannot divide by Zero")
         return None
     result = a / b
     logging.info(f"Result: {result}")
@@ -39,17 +39,17 @@ print(divide(10, 0))
 def safe_int(value):
     try:
         logging.debug("Converting value = %s to integer", value)
-        if value.isdigit():
-            dig = int(value)
-            logging.info("value = %d is safely converted to integer", dig)
-            return dig
-    except (ValueError, TypeError):
-        logging.exception("Value %s cannot be converted to integer", value)
+        dig = int(value)
+        logging.info("value = %d is safely converted to integer %r", value, dig)
+        return dig
+    except (ValueError, TypeError)as e:
+        logging.exception("Value %r cannot be converted to integer", value)
         return "cannot be converted"
     
 print(safe_int("42"))
 print(safe_int("hello"))
 print(safe_int(None))
+print(safe_int(-5))
 
 # Drill 4: Loggging in a loop
 def process_items(items):
