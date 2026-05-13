@@ -1,0 +1,20 @@
+[Running] python -u "d:\Automation\python_learning\weather_cli\main.py"
+========================================
+Weather Report
+========================================
+2026-05-13 20:07:36 [DEBUG] urllib3.connectionpool Starting new HTTPS connection (1): api.open-meteo.com:443
+2026-05-13 20:07:37 [DEBUG] urllib3.connectionpool https://api.open-meteo.com:443 "GET /v1/forecast?latitude=19.07&longitude=72.87&current=temperature_2m%2Cwind_speed_10m HTTP/1.1" 200 None
+2026-05-13 20:07:37 [INFO] weather_api Fetched weather for (19.07, 72.87): 29.6deg cel
+Mumbai        29.6deg C wind 9.4 km/h
+2026-05-13 20:07:37 [DEBUG] urllib3.connectionpool Starting new HTTPS connection (1): api.open-meteo.com:443
+2026-05-13 20:07:38 [DEBUG] urllib3.connectionpool https://api.open-meteo.com:443 "GET /v1/forecast?latitude=12.97&longitude=77.59&current=temperature_2m%2Cwind_speed_10m HTTP/1.1" 200 None
+2026-05-13 20:07:38 [INFO] weather_api Fetched weather for (12.97, 77.59): 30.8deg cel
+Bangalore     30.8deg C wind 6.2 km/h
+2026-05-13 20:07:38 [DEBUG] urllib3.connectionpool Starting new HTTPS connection (1): api.open-meteo.com:443
+2026-05-13 20:07:40 [DEBUG] urllib3.connectionpool https://api.open-meteo.com:443 "GET /v1/forecast?latitude=28.61&longitude=77.21&current=temperature_2m%2Cwind_speed_10m HTTP/1.1" 200 None
+2026-05-13 20:07:40 [INFO] weather_api Fetched weather for (28.61, 77.21): 33.5deg cel
+Delhi         33.5deg C wind 5.7 km/h
+2026-05-13 20:07:40 [DEBUG] urllib3.connectionpool Starting new HTTPS connection (1): api.open-meteo.com:443
+2026-05-13 20:07:41 [DEBUG] urllib3.connectionpool https://api.open-meteo.com:443 "GET /v1/forecast?latitude=13.08&longitude=80.27&current=temperature_2m%2Cwind_speed_10m HTTP/1.1" 200 None
+2026-05-13 20:07:41 [INFO] weather_api Fetched weather for (13.08, 80.27): 30.1deg cel
+Chennai       30.1deg C wind 11.2 km/h
