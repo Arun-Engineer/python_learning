@@ -18,3 +18,16 @@ Delhi         33.5deg C wind 5.7 km/h
 2026-05-13 20:07:41 [DEBUG] urllib3.connectionpool https://api.open-meteo.com:443 "GET /v1/forecast?latitude=13.08&longitude=80.27&current=temperature_2m%2Cwind_speed_10m HTTP/1.1" 200 None
 2026-05-13 20:07:41 [INFO] weather_api Fetched weather for (13.08, 80.27): 30.1deg cel
 Chennai       30.1deg C wind 11.2 km/h
+
+PS D:\Automation\python_learning> pytest .\weather_cli\test_weather_api.py
+===================================== test session starts ======================================
+platform win32 -- Python 3.14.0, pytest-9.0.2, pluggy-1.6.0
+rootdir: D:\Automation\python_learning
+plugins: anyio-4.12.1, langsmith-0.6.8, asyncio-1.3.0, base-url-2.1.0, cov-7.0.0, html-4.2.0, json-report-1.5.0, metadata-3.1.1, playwright-0.7.2
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 2 items                                                                               
+
+weather_cli\test_weather_api.py ..                                                        [100%]
+
+====================================== 2 passed in 2.61s =======================================
+PS D:\Automation\python_learning> 
