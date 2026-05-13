@@ -78,3 +78,11 @@ attempt= 3 --> wait 8s
 2026-05-13 20:29:49 [INFO] __main__: Status code: 503
 2026-05-13 20:29:49 [WARNING] __main__: Final attempt 4/4 got status 503
 2026-05-13 20:29:49 [ERROR] __main__: Exhausted 3 retries for https://httpbin.org/status/503
+
+[Running] python -u "d:\Automation\python_learning\day10_capstone\drills_day10.py"
+2026-05-13 20:36:37 [INFO] __main__: Status code: 404 for https://jsonplaceholder.typicode.com/users/9999
+None
+2026-05-13 20:36:38 [INFO] __main__: Status code: 500 for https://httpbin.org/status/500
+None
+None
+2026-05-13 20:36:39 [ERROR] __main__: Unauthorised error
