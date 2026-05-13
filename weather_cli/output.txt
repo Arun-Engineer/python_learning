@@ -31,3 +31,50 @@ weather_cli\test_weather_api.py ..                                              
 
 ====================================== 2 passed in 2.61s =======================================
 PS D:\Automation\python_learning> 
+
+[Running] python -u "d:\Automation\python_learning\day10_capstone\drills_day10.py"
+2026-05-13 20:29:27 [INFO] __main__: temperature_2m: 29.7
+{'latitude': 19.086115, 'longitude': 72.85291, 'generationtime_ms': 0.022530555725097656, 'utc_offset_seconds': 0, 'timezone': 'GMT', 'timezone_abbreviation': 'GMT', 'elevation': 6.0, 'current_units': {'time': 'iso8601', 'interval': 'seconds', 'temperature_2m': '�C'}, 'current': {'time': '2026-05-13T14:45', 'interval': 900, 'temperature_2m': 29.7}}
+2026-05-13 20:29:28 [ERROR] __main__: Failed to get response
+Traceback (most recent call last):
+  File "d:\Automation\python_learning\day10_capstone\drills_day10.py", line 28, in get_temperature
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\WELCOME\AppData\Local\Programs\Python\Python314\Lib\site-packages\requests\models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.open-meteo.com/v1/forecast?latitude=999&longitude=999&current=temperature_2m
+None
+2026-05-13 20:29:29 [INFO] __main__: Username: Bret
+2026-05-13 20:29:29 [INFO] __main__: Username: Antonette
+2026-05-13 20:29:29 [INFO] __main__: Username: Samantha
+2026-05-13 20:29:29 [INFO] __main__: Username: Karianne
+2026-05-13 20:29:29 [INFO] __main__: Username: Kamren
+2026-05-13 20:29:29 [INFO] __main__: Username: Leopoldo_Corkery
+2026-05-13 20:29:29 [INFO] __main__: Username: Elwyn.Skiles
+2026-05-13 20:29:29 [INFO] __main__: Username: Maxime_Nienow
+2026-05-13 20:29:29 [INFO] __main__: Username: Delphine
+2026-05-13 20:29:29 [INFO] __main__: Username: Moriah.Stanton
+['Sincere@april.biz', 'Shanna@melissa.tv', 'Nathan@yesenia.net', 'Julianne.OConner@kory.org', 'Lucio_Hettinger@annie.ca', 'Karley_Dach@jasper.info', 'Telly.Hoeger@billy.biz', 'Sherwood@rosamond.me', 'Chaim_McDermott@dana.io', 'Rey.Padberg@karina.biz']
+{'title': 'Finish Day 10', 'completed': False, 'user_id': 1, 'id': 201}
+2026-05-13 20:29:31 [INFO] __main__: Status code: 200
+None
+2026-05-13 20:29:32 [INFO] __main__: Status code: 200
+None
+2026-05-13 20:29:33 [INFO] __main__: Status code: 200
+None
+Wait sequence:
+attempt= 0 --> wait 1s
+attempt= 1 --> wait 2s
+attempt= 2 --> wait 4s
+attempt= 3 --> wait 8s
+
+---- Test: Always-503 URL ----
+2026-05-13 20:29:35 [INFO] __main__: Status code: 503
+2026-05-13 20:29:35 [WARNING] __main__: Atempt 1/4 failed with 503 - retrying in 1 seconds
+2026-05-13 20:29:39 [INFO] __main__: Status code: 503
+2026-05-13 20:29:39 [WARNING] __main__: Atempt 2/4 failed with 503 - retrying in 2 seconds
+2026-05-13 20:29:43 [INFO] __main__: Status code: 503
+2026-05-13 20:29:43 [WARNING] __main__: Atempt 3/4 failed with 503 - retrying in 4 seconds
+2026-05-13 20:29:49 [INFO] __main__: Status code: 503
+2026-05-13 20:29:49 [WARNING] __main__: Final attempt 4/4 got status 503
+2026-05-13 20:29:49 [ERROR] __main__: Exhausted 3 retries for https://httpbin.org/status/503
