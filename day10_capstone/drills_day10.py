@@ -74,7 +74,7 @@ def create_todo(title: str, completed: bool = False) -> dict | None:
     try:
         response = requests.post(url, json = payload, timeout=5)
         response.raise_for_status()
-        return response.json
+        return response.json()
 
     except requests.RequestException:
         logger.exception("Failed to get POST")
@@ -84,7 +84,7 @@ print(create_todo("Finish Day 10", False))
 
 # Drill 4: Status code branching
 def safe_fetch(url: str) -> dict | None:
-    url= "https://jsonplaceholder.typicode.com/users"
+    #url= "https://jsonplaceholder.typicode.com/users"
 
     try:
         response = requests.get(url, timeout=5)
@@ -105,12 +105,12 @@ print(safe_fetch("https://this-does-not-exist-asdfgh.com"))
 #Drill 5: Retry on 429/503
 import time
 def fetch_with_retry(url: str, max_retries: int=3) -> dict | None:
-    for attempt in (max_retries +1):
+    for attempt in range(max_retries +1):
         try:
             response = requests.get(url, timeout=5)
         except requests.RequestException as e:
             if attempt < max_retries:
-                wait = 2 ** attempt.random.uniform(0, 1)
+                wait = 2 ** attempt+random.uniform(0, 1)
                 logger.warning(
                     "Atempt %d/%d failed with %s - retrying in %d seconds",
                     attempt + 1, max_retries + 1, type(e).__name__, wait
@@ -124,7 +124,7 @@ def fetch_with_retry(url: str, max_retries: int=3) -> dict | None:
             return response.json()
         if response.status_code in (429, 503):
             if attempt < max_retries:
-                wait = 2 ** attempt.random.uniform(0, 1)
+                wait = 2 ** attempt+random.uniform(0, 1)
                 logger.warning(
                     "Atempt %d/%d failed with %s - retrying in %d seconds",
                     attempt + 1, max_retries + 1, response.status_code, wait
@@ -143,6 +143,10 @@ def fetch_with_retry(url: str, max_retries: int=3) -> dict | None:
     logger.error("Exhausted %d retries for %s", max_retries, url)
     return None
 
-
-    
-
+import time
+print("Wait sequence:")
+for a in range(4):
+    print(f"attempt= {a} --> wait {2**a}s")
+print("\n---- Test: Always-503 URL ----")
+start = time.time()
+result = fetch_with_retry("https://httpbin.org/status/503", max_retries = 3)
