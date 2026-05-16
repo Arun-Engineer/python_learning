@@ -1,0 +1,168 @@
+[Running] python -u "d:\Automation\python_learning\day_11\day11_lesson.py"
+2026-05-16 08:48:30 [INFO] __main__: ====SYNC version starting====
+2026-05-16 08:48:30 [INFO] __main__:    fetching  Mumbai
+2026-05-16 08:48:31 [INFO] __main__:    done Mumbai: 31.4degC
+2026-05-16 08:48:31 [INFO] __main__: ====SYNC done in 1.29 seconds ====
+[('Mumbai', 31.4)]
+
+2026-05-16 08:48:31 [INFO] __main__: ====ASYNC version starting====
+2026-05-16 08:48:32 [INFO] __main__:   starting Mumbai
+2026-05-16 08:48:32 [INFO] __main__:   starting Chennai
+2026-05-16 08:48:32 [INFO] __main__:   starting Delhi
+2026-05-16 08:48:32 [INFO] __main__:   starting Chennai
+2026-05-16 08:48:33 [INFO] httpx: HTTP Request: GET https://api.open-meteo.com/v1/forecast?latitude=12.97&longitude=77.59&current=temperature_2m "HTTP/1.1 200 OK"
+2026-05-16 08:48:33 [INFO] httpx: HTTP Request: GET https://api.open-meteo.com/v1/forecast?latitude=19.07&longitude=72.87&current=temperature_2m "HTTP/1.1 200 OK"
+2026-05-16 08:48:33 [INFO] __main__:    done Chennai: 27.1degC
+2026-05-16 08:48:33 [INFO] __main__:    done Mumbai: 31.4degC
+2026-05-16 08:48:33 [INFO] httpx: HTTP Request: GET https://api.open-meteo.com/v1/forecast?latitude=28.61&longitude=28.61&current=temperature_2m "HTTP/1.1 200 OK"
+2026-05-16 08:48:33 [INFO] __main__:    done Delhi: 19.0degC
+2026-05-16 08:48:33 [INFO] httpx: HTTP Request: GET https://api.open-meteo.com/v1/forecast?latitude=13.08&longitude=80.27&current=temperature_2m "HTTP/1.1 200 OK"
+2026-05-16 08:48:33 [INFO] __main__:    done Chennai: 28.8degC
+2026-05-16 08:48:33 [INFO] __main__: ====ASYNC done in 1.56 seconds ====
+
+[Done] exited with code=0 in 3.952 seconds
+
+[Running] python -u "d:\Automation\python_learning\day_11\day11_drills"
+  starting Arun
+ Done Arun
+
+
+=====DRILL 2=====
+
+  starting a
+ Done a
+  starting b
+ Done b
+  starting c
+ Done c
+ Sequential: 3.01s
+  starting a
+  starting b
+  starting c
+ Done a
+ Done b
+ Done c
+Concurrent: 1.01s
+
+
+=====DRILL 3=====
+
+Got 10 emails
+
+
+=====DRILL 4=====
+
+Got 4 users in 0.68s
+
+
+=====DRILL 5=====
+
+Results: ['a succeeded', ValueError('b failed!'), 'c succeeded']
+
+
+PS D:\Automation\python_learning\day_11> python main_async.py
+==================================================
+Weather Report (Async)
+==================================================
+2026-05-16 13:52:37 [DEBUG] httpcore.connection: connect_tcp.started host='api.open-meteo.com' port=443 local_address=None timeout=5 socket_options=None
+2026-05-16 13:52:37 [DEBUG] httpcore.connection: connect_tcp.started host='api.open-meteo.com' port=443 local_address=None timeout=5 socket_options=None
+2026-05-16 13:52:37 [DEBUG] httpcore.connection: connect_tcp.started host='api.open-meteo.com' port=443 local_address=None timeout=5 socket_options=None
+2026-05-16 13:52:37 [DEBUG] httpcore.connection: connect_tcp.started host='api.open-meteo.com' port=443 local_address=None timeout=5 socket_options=None
+2026-05-16 13:52:38 [DEBUG] httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002079FA56510>
+2026-05-16 13:52:38 [DEBUG] httpcore.connection: start_tls.started ssl_context=<ssl.SSLContext object at 0x000002079F91DD00> server_hostname='api.open-meteo.com' timeout=5
+2026-05-16 13:52:38 [DEBUG] httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002079FACD450>
+2026-05-16 13:52:38 [DEBUG] httpcore.connection: start_tls.started ssl_context=<ssl.SSLContext object at 0x000002079F91DD00> server_hostname='api.open-meteo.com' timeout=5
+2026-05-16 13:52:38 [DEBUG] httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002079FACDA90>
+2026-05-16 13:52:38 [DEBUG] httpcore.connection: start_tls.started ssl_context=<ssl.SSLContext object at 0x000002079F91DD00> server_hostname='api.open-meteo.com' timeout=5
+2026-05-16 13:52:38 [DEBUG] httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002079FA23950>
+2026-05-16 13:52:38 [DEBUG] httpcore.connection: start_tls.started ssl_context=<ssl.SSLContext object at 0x000002079F91DD00> server_hostname='api.open-meteo.com' timeout=5
+2026-05-16 13:52:38 [DEBUG] httpcore.connection: start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002079FAD43E0>
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: send_request_headers.started request=<Request [b'GET']>
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: send_request_headers.complete
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: send_request_body.started request=<Request [b'GET']>
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: send_request_body.complete
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: receive_response_headers.started request=<Request [b'GET']>
+2026-05-16 13:52:38 [DEBUG] httpcore.connection: start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002079FADC050>
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: send_request_headers.started request=<Request [b'GET']>
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: send_request_headers.complete
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: send_request_body.started request=<Request [b'GET']>
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: send_request_body.complete
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: receive_response_headers.started request=<Request [b'GET']>
+2026-05-16 13:52:38 [DEBUG] httpcore.connection: start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002079FA79E10>
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: send_request_headers.started request=<Request [b'GET']>
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: send_request_headers.complete
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: send_request_body.started request=<Request [b'GET']>
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: send_request_body.complete
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: receive_response_headers.started request=<Request [b'GET']>
+2026-05-16 13:52:38 [DEBUG] httpcore.connection: start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002079FA7A360>
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: send_request_headers.started request=<Request [b'GET']>
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: send_request_headers.complete
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: send_request_body.started request=<Request [b'GET']>
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: send_request_body.complete
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: receive_response_headers.started request=<Request [b'GET']>
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 16 May 2026 08:22:38 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Content-Encoding', b'deflate')])
+2026-05-16 13:52:38 [INFO] httpx: HTTP Request: GET https://api.open-meteo.com/v1/forecast?latitude=28.67&longitude=77.21&current=temperature_2m%2Cwind_speed_10m "HTTP/1.1 200 OK"
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: receive_response_body.started request=<Request [b'GET']>
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: receive_response_body.complete
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: response_closed.started
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: response_closed.complete
+2026-05-16 13:52:38 [INFO] weather_api_sync: Fetched Delhi: 39.6 def C
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 16 May 2026 08:22:38 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Content-Encoding', b'deflate')])
+2026-05-16 13:52:38 [INFO] httpx: HTTP Request: GET https://api.open-meteo.com/v1/forecast?latitude=12.97&longitude=77.59&current=temperature_2m%2Cwind_speed_10m "HTTP/1.1 200 OK"
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: receive_response_body.started request=<Request [b'GET']>
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: receive_response_body.complete
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: response_closed.started
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: response_closed.complete
+2026-05-16 13:52:38 [INFO] weather_api_sync: Fetched Bangalore: 32.9 def C
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 16 May 2026 08:22:38 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Content-Encoding', b'deflate')])
+2026-05-16 13:52:38 [INFO] httpx: HTTP Request: GET https://api.open-meteo.com/v1/forecast?latitude=13.08&longitude=80.27&current=temperature_2m%2Cwind_speed_10m "HTTP/1.1 200 OK"
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: receive_response_body.started request=<Request [b'GET']>
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: receive_response_body.complete
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: response_closed.started
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: response_closed.complete
+2026-05-16 13:52:38 [INFO] weather_api_sync: Fetched Chennai: 31.0 def C
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 16 May 2026 08:22:38 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Content-Encoding', b'deflate')])
+2026-05-16 13:52:38 [INFO] httpx: HTTP Request: GET https://api.open-meteo.com/v1/forecast?latitude=19.07&longitude=72.87&current=temperature_2m%2Cwind_speed_10m "HTTP/1.1 200 OK"
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: receive_response_body.started request=<Request [b'GET']>
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: receive_response_body.complete
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: response_closed.started
+2026-05-16 13:52:38 [DEBUG] httpcore.http11: response_closed.complete
+2026-05-16 13:52:38 [INFO] weather_api_sync: Fetched Mumbai: 33.4 def C
+2026-05-16 13:52:38 [DEBUG] httpcore.connection: close.started
+2026-05-16 13:52:38 [DEBUG] httpcore.connection: close.complete
+2026-05-16 13:52:38 [DEBUG] httpcore.connection: close.started
+2026-05-16 13:52:38 [DEBUG] httpcore.connection: close.complete
+2026-05-16 13:52:38 [DEBUG] httpcore.connection: close.started
+2026-05-16 13:52:38 [DEBUG] httpcore.connection: close.complete
+2026-05-16 13:52:38 [DEBUG] httpcore.connection: close.started
+2026-05-16 13:52:38 [DEBUG] httpcore.connection: close.complete
+Mumbai        33.4 def C wind17.2 km/h
+Bangalore     32.9 def C wind10.6 km/h
+Delhi         39.6 def C wind12.2 km/h
+Chennai       31.0 def C wind8.3 km/h
+==================================================
+Fetched 4 cities in 1.27 seconds
+
+Sync version
+PS D:\Automation\python_learning\weather_Cli> python main.py
+========================================
+Weather Report
+========================================
+2026-05-16 14:00:55 [DEBUG] urllib3.connectionpool Starting new HTTPS connection (1): api.open-meteo.com:443
+2026-05-16 14:00:56 [DEBUG] urllib3.connectionpool https://api.open-meteo.com:443 "GET /v1/forecast?latitude=19.07&longitude=72.87&current=temperature_2m%2Cwind_speed_10m HTTP/1.1" 200 None
+2026-05-16 14:00:56 [INFO] weather_api Fetched weather for (19.07, 72.87): 33.3deg cel
+Mumbai        33.3deg C wind 17.6 km/h
+2026-05-16 14:00:56 [DEBUG] urllib3.connectionpool Starting new HTTPS connection (1): api.open-meteo.com:443
+2026-05-16 14:00:57 [DEBUG] urllib3.connectionpool https://api.open-meteo.com:443 "GET /v1/forecast?latitude=12.97&longitude=77.59&current=temperature_2m%2Cwind_speed_10m HTTP/1.1" 200 None
+2026-05-16 14:00:57 [INFO] weather_api Fetched weather for (12.97, 77.59): 33.0deg cel
+Bangalore     33.0deg C wind 11.2 km/h
+2026-05-16 14:00:57 [DEBUG] urllib3.connectionpool Starting new HTTPS connection (1): api.open-meteo.com:443
+2026-05-16 14:00:58 [DEBUG] urllib3.connectionpool https://api.open-meteo.com:443 "GET /v1/forecast?latitude=28.61&longitude=77.21&current=temperature_2m%2Cwind_speed_10m HTTP/1.1" 200 None
+2026-05-16 14:00:58 [INFO] weather_api Fetched weather for (28.61, 77.21): 39.6deg cel
+Delhi         39.6deg C wind 13.4 km/h
+2026-05-16 14:00:58 [DEBUG] urllib3.connectionpool Starting new HTTPS connection (1): api.open-meteo.com:443
+2026-05-16 14:00:59 [DEBUG] urllib3.connectionpool https://api.open-meteo.com:443 "GET /v1/forecast?latitude=13.08&longitude=80.27&current=temperature_2m%2Cwind_speed_10m HTTP/1.1" 200 None
+2026-05-16 14:00:59 [INFO] weather_api Fetched weather for (13.08, 80.27): 31.1deg cel
+Chennai       31.1deg C wind 8.4 km/h
+========================================
+PS D:\Automation\python_learning\weather_Cli> 

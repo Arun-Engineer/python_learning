@@ -1,0 +1,91 @@
+# Drill 1
+import asyncio
+import time
+import httpx
+
+async def hello(name):
+    print(f"  starting {name}")
+    await asyncio.sleep(1)
+    print(f" Done {name}")
+    return f"  hello-{name}"
+
+asyncio.run(hello("Arun"))
+
+print("\n")
+print("=====DRILL 2=====")
+print()
+
+# Drill 2 - Sequential vs Concurrent
+
+async def sequential():
+    start = time.time()
+    await hello("a")
+    await hello("b")
+    await hello("c")
+    print(f" Sequential: {time.time() - start:.2f}s")
+
+async def concurrent():
+    start = time.time()
+    await asyncio.gather(hello("a"), hello("b"), hello("c"))
+    print(f"Concurrent: {time.time() - start:.2f}s")
+
+asyncio.run(sequential())
+asyncio.run(concurrent())
+
+print("\n")
+print("=====DRILL 3=====")
+print()
+
+# Drill - 3 Async HTTP
+
+async def get_user_emails_sync() -> list[str]:
+    async with httpx.AsyncClient() as client:
+        response = await client.get("https://jsonplaceholder.typicode.com/users", timeout= 5)
+        data = response.json()
+        return [user["email"] for user in data]
+
+result = asyncio.run(get_user_emails_sync())
+print(f"Got {len(result)} emails")
+
+print("\n")
+print("=====DRILL 4=====")
+print()
+
+# Drill 4: Parallel HTTP
+
+async def fetch_one_user(client, user_id):
+    response = await client.get("https://jsonplaceholder.typicode.com/users/{user_id}")
+    return response.json()
+
+async def fetch_multiple_users(user_ids) -> tuple[str]:
+    async with httpx.AsyncClient() as client:
+        tasks = [fetch_one_user(client, uid) for uid in user_ids]
+        return await asyncio.gather(*tasks)
+    
+start = time.time()
+users = asyncio.run(fetch_multiple_users([1, 2, 3 , 4]))
+elapsed = time.time() - start
+print(f"Got {len(users)} users in {elapsed:.2f}s")
+
+print("\n")
+print("=====DRILL 5=====")
+print()
+
+# Drill 5:- Errors in gather
+
+async def maybe_fail(name, should_fail):
+    await asyncio.sleep(0.5)
+    if should_fail:
+        raise ValueError(f"{name} failed!")
+    return f"{name} succeeded"
+
+async def run_with_errors():
+    results = await asyncio.gather(
+        maybe_fail("a", False),
+        maybe_fail("b", True),
+        maybe_fail("c", False),
+        return_exceptions= True,
+    )
+    print(f"Results: {results}")
+
+asyncio.run(run_with_errors())
