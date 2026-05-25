@@ -94,11 +94,19 @@ Hello, how are you?
 response_id         : chatcmpl-DgsTOk5GsGBe2DbJrf78ccfFp0v8l
 model_returned      : gpt-4o-mini-2024-07-18
 finish_reason       : stop
-prompt_token        : 15
-completion_tokens   : 7
+  completion_tokens   : 7
 total_tokens        : 22
 choices_count       : 1
 role                : assistant
 text                : Hello! How are you today?
 
 [Done] exited with code=0 in 6.842 seconds
+
+[Running] python -u "d:\Automation\python_learning\day_12\llm_client.py"
+--- SMOKE TEST ----
+A Python list comprehension is a concise way to create lists by containing an expression followed by a for clause and optionally including an if clause.
+
+[Done] exited with code=0 in 4.47 seconds
+
+[Running] python -u "d:\Automation\python_learning\day_12\ask_cli.py"
+Usage: python ask_cli.py 'your question'
