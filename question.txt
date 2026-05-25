@@ -1,0 +1,45 @@
+Question 1
+
+Arrays requestIDs and timestamps are given, along with an integer timeWindow.
+
+- requestIDs[i] represents the ID of a request
+- timestamps[i] represents the time (in seconds) when that request occurred
+
+A request ID is considered repeated within the window if:
+- it appears at least twice, and
+- there exist two occurrences whose time difference is <= timeWindow
+
+Your task is to count how many distinct request IDs satisfy this condition.
+
+Return the count.
+
+Example
+
+n = 4
+
+requestIDs = ["authreq001", "authreq002", "authreq001", "authreq002"]
+
+timestamps = [10, 25, 20, 15]
+
+timeWindow = 10
+
+Summary of each unique request ID based on the time window condition:
+
+- "authreq001" appears at 10 and 20.
+  20 - 10 = 10 <= 10, which satisfies the condition.
+
+- "authreq002" appears at 15 and 25.
+  25 - 15 = 10 <= 10, which satisfies the condition.
+
+Hence, the answer is 2.
+
+Constraints
+
+- 1 <= n <= 2 * 10^5
+- 1 <= length of requestIDs[i] <= 2 * 10^5
+- The sum of lengths over all requestIDs does not exceed 2 * 10^5
+
+Function Signature
+
+def countFrequentRequestIDs(requestIDs, timestamps, timeWindow):
+    # Return an integer

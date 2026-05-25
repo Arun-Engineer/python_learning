@@ -11,3 +11,6 @@ def setup_logger(log_file: str = "tracker.log", level: int = logging.DEBUG):
             logging.StreamHandler(),
         ],
     )
+    logging.getLogger("httpcore").setLevel(logging.WARNING)
+    logging.getLogger("httpx").setLevel(logging.WARNING)
+    logging.getLogger("urllib3").setLevel(logging.WARNING)

@@ -1,0 +1,104 @@
+[Running] python -u "d:\Automation\python_learning\day_12\first_LLM _call.py"
+18:13:18 [INFO] __main__: Asking OpenAI: 'What is one thing every Python developer should know about async/wait'
+
+============================================================
+One key concept that every Python developer should understand about `async` and `await` is the importance of the event loop in asynchronous programming.
+
+### Event Loop
+
+The event loop is the core of asynchronous programming in Python. When you define an `async` function, you are creating a coroutine that can pause and yield control back to the event loop, allowing other tasks to run concurrently. The `await` keyword is used to call other asynchronous functions (coroutines), which can also yield control back to the event loop, enabling efficient multitasking without blocking the execution thread.
+
+### Why It Matters
+
+1. **Non-Blocking I/O**: Asynchronous code is excellent for I/O-bound operations, such as web requests or file operations, where waiting is common. Instead of blocking the execution while waiting for these operations to complete, the event loop allows other tasks to be processed, enhancing the application's responsiveness and throughput.
+
+2. **Concurrency, Not Parallelism**: It's important to note that `async` and `await` enable concurrency through cooperative multitasking, not parallel execution. This means that while one task is waiting, other tasks can be run in the meantime, but they are not running at the same exact moment in multiple CPU cores.
+
+3. **Integration**: Knowing when and how to use `async` and `await`, especially when working with frameworks like `asyncio`, `FastAPI`, or `aiohttp`, can significantly improve performance and make your applications more efficient when dealing with multiple simultaneous operations.
+
+### General Advice
+
+- **Understand the Life Cycle**: Familiarize yourself with the lifecycle of an async function, including how to create the event loop and run coroutines.
+- **Use Async Libraries**: Leverage asynchronous libraries and frameworks that support `async` and `await` to manage connections and I/O tasks effectively.
+- **Be Mindful of Design**: Ensure that your code structure is designed to take full advantage of async capabilities, avoiding mixing synchronous and asynchronous code inappropriately.
+
+By gaining a solid understanding of the event loop and how to properly use `async/await`, Python developers can write more efficient and scalable applications.
+18:13:30 [INFO] __main__: Got the response (20 input tokens, 433 output tokens)
+============================================================
+
+[Done] exited with code=0 in 14.635 seconds
+
+[Running] python -u "d:\Automation\python_learning\day_12\day_12_drill_2.py"
+
+--- Turn 1 ---
+USER: I m learning python. Whats the most important concept i should master first?
+ASSISTANT: When learning Python, there are several foundational concepts that are important to master first. Here are the key ones:
+
+1. **Data Types and Variables**:
+   - Understand different data types (integer...
+
+--- Turn 2 ---
+USER: Can you give  me one specific exercise to practice it?.
+ASSISTANT: Certainly! Here�s an exercise that combines several of the foundational concepts in Python. You'll practice variables, data types, control structures, functions, and loops.
+
+### Exercise: Simple To-Do...
+
+--- Turn 3 ---
+USER: How will i know when i ve mastered it?.
+ASSISTANT: Mastering a programming concept takes practice, understanding, and confidence in applying what you've learned. Here are some indicators that you might have mastered the foundational concepts in Python...
+
+[Done] exited with code=0 in 40.351 seconds
+
+[Running] python -u "d:\Automation\python_learning\day_12\day12_drill_3.py"
+---- EXPERT ----
+To write a Python function, you use the `def` keyword followed by the function name and parentheses. Here's the basic syntax:
+
+```python
+def function_name(parameters):
+    """Docstring (optional): Description of the function."""
+    # Function body
+    return result  # Optional return statement
+```
+
+
+---- TEACHER ----
+Sure! Writing a function in Python is a fundamental skill, and it's great that you want to learn how to do it. Let's break it down step by step.
+
+### What is a Function?
+
+A function is a reusable block of code that performs a specific task. You can think of it as a mini-program within your program. 
+
+---- POET ----
+Create with intent,  
+Define the function's purpose,  
+Use "def" to start.  
+
+Parameters pass,  
+Indent the code that follows,  
+Return what you need.  
+
+Call it when needed,  
+Variable holds the truth,  
+Python's grace unfolds.
+
+[Done] exited with code=0 in 23.003 seconds
+
+[Running] python -u "d:\Automation\python_learning\day_12\day_12_drill_4.py"
+--------- SUCCESS----------
+Hello, how are you?
+
+[Done] exited with code=0 in 3.295 seconds
+
+[Running] python -u "d:\Automation\python_learning\day_12\day_12_drill_5.py"
+---- RESPONSE INSPECTION -----
+response_id         : chatcmpl-DgsTOk5GsGBe2DbJrf78ccfFp0v8l
+model_returned      : gpt-4o-mini-2024-07-18
+finish_reason       : stop
+prompt_token        : 15
+completion_tokens   : 7
+total_tokens        : 22
+choices_count       : 1
+role                : assistant
+text                : Hello! How are you today?
+
+[Done] exited with code=0 in 6.842 seconds
