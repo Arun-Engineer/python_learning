@@ -1,0 +1,228 @@
+[Running] python -u "d:\Automation\python_learning\day_13\day13_drills.py"
+Review: Best product I've bought!
+ -> Positive
+
+Review: Complete waste of money, broke in 2 days.
+ -> Negative
+
+Review: It works. Nothing special.
+ -> Neutral
+
+
+[Done] exited with code=0 in 7.315 seconds
+
+[Running] python -u "d:\Automation\python_learning\day_13\day13_drills.py"
+Raw output:
+{"name": "Arun", "email": "arun@gmail.com", "phone": "1234567890"}
+
+Parsed JSON: {'name': 'Arun', 'email': 'arun@gmail.com', 'phone': '1234567890'}
+Email extracted: arun@gmail.com
+
+[Done] exited with code=0 in 5.198 seconds
+
+
+[Running] python -u "d:\Automation\python_learning\day_13\day13_drills.py"
+--- WITHOUT CoT ---
+75
+
+--- WITH CoT ---
+Let's break down the problem step by step.
+
+1. **Initial number of apples on Monday**: 250 apples.
+
+2. **On Tuesday, they sold 30% of them**:
+   - To find out how many apples were sold on Tuesday, calculate 30% of 250:
+     \[
+     30\% \text{ of } 250 = \frac{30}{100} \times 250 = 0.3 \times 250 = 75 \text{ apples}
+     \]
+   - After selling 75 apples, the number of apples left
+
+[Done] exited with code=0 in 8.207 seconds
+
+[Running] python -u "d:\Automation\python_learning\day_13\day13_drills.py"
+**Clarity of steps: 2/5**  
+The steps lack detail, making it unclear what specific actions are required to "enter Credentials" and what the expected input formats are.
+
+**Specificity of expected results: 2/5**  
+The expected result is vague; it would be more effective to specify what the user should see after logging in, such as being redirected to a dashboard or confirming a successful login message.
+
+**Coverage of edge cases: 1/5**  
+The test case does not address any edge cases, such as failed login attempts, invalid credentials, or the handling of empty fields, which are critical for robust testing.
+
+[Done] exited with code=0 in 5.627 seconds
+
+[Running] python -u "d:\Automation\python_learning\day_13\day13_drills.py"
+**Bug: "Cart total miscalculates when applying coupon + shipping discount together; users charged $5-$10 extra."**
+
+**Reasoning:** This bug affects users' ability to accurately see and pay for their cart total, which directly impacts their purchasing experience and can lead to significant financial discrepancies. It creates a major functional issue as users may be overcharged, which in turn affects customer trust and could lead to losing sales. Since it is a critical part of the checkout process and has a substantial impact on revenue, this would classify as a P1.
+
+**Final Label:** P1
+
+[Done] exited with code=0 in 6.979 seconds
+
+[Running] python -u "d:\Automation\python_learning\day_13\generate_cli.py"
+Usage: python generate_cli.py 'Feature description here'
+
+[Done] exited with code=1 in 1.387 seconds
+
+PS D:\Automation\python_learning\day_13> python test_case_generator.py
+Generted 5 test cases
+
+--- Test Case 1: [happy_path] Successful login with valid credentials ---
+Steps:
+ - Navigate to login
+ - Enter valid username and password
+ - Click submit
+Expected: User is redirected to the dashboard; session cookie is set
+
+--- Test Case 2: [negative] Login fails with wrong password ---
+Steps:
+ - Navigate to login
+ - Enter valid username and wrong password
+ - Click submit
+Expected: Error message 'Invalid login credentials' is shown; user stays on login page
+
+--- Test Case 3: [negative] Login fails with unregistered username ---
+Steps:
+ - Navigate to login
+ - Enter unregistered username and any password
+ - Click submit
+Expected: Error message 'User not found' is shown; user stays on login page
+
+--- Test Case 4: [security] Successful login with SQL injection attempt in username ---
+Steps:
+ - Navigate to login
+ - Enter 'admin' OR '1'='1' in username field and any password
+ - Click submit
+Expected: Error message 'Invalid login credentials' is shown; application does not execute SQL query
+
+--- Test Case 5: [edge_case] Successful login with maximum length username and password ---
+Steps:
+ - Navigate to login
+ - Enter maximum length username and password
+ - Click submit
+Expected: User is redirected to the dashboard; session cookie is set
+
+PS D:\Automation\python_learning\day_13> 
+
+PS D:\Automation\python_learning\day_13> python generate_cli.py "Password reset via email: user enters email, receives reset link valid for 30 mins, clicks link, set password, can log in with new password"
+[
+  {
+    "title": "Successful user registration with valid details",
+    "steps": [
+      "Navigate to registration page",
+      "Enter valid username, email, and password",
+      "Click submit"
+    ],
+    "expected": "User receives a confirmation email and is redirected to the welcome page",
+    "category": "happy_path"
+  },
+  {
+    "title": "Registration fails with duplicate username",
+    "steps": [
+      "Navigate to registration page",
+      "Enter existing username, valid email, and password",
+      "Click submit"
+    ],
+    "expected": "Error message 'Username already exists' is displayed; user stays on registration page",
+    "category": "negative"
+  },
+  {
+    "title": "Registration fails with invalid email format",
+    "steps": [
+      "Navigate to registration page",
+      "Enter valid username and password, invalid email format",
+      "Click submit"
+    ],
+    "expected": "Error message 'Invalid email format' is displayed; user stays on registration page",
+    "category": "negative"
+  },
+  {
+    "title": "Successful registration with minimum required fields",
+    "steps": [
+      "Navigate to registration page",
+      "Enter valid username and password, leave email blank",
+      "Click submit"
+    ],
+    "expected": "User receives a confirmation email and is redirected to the welcome page, email sent to default",
+    "category": "edge_case"
+  },
+  {
+    "title": "Security check for SQL injection in registration fields",
+    "steps": [
+      "Navigate to registration page",
+      "Enter username as 'admin'; DROP TABLE users; -- and valid email and password",
+      "Click submit"
+    ],
+    "expected": "Error message 'Input contains SQL injection attempt' is displayed; user stays on registration page",
+    "category": "security"
+  }
+]
+PS D:\Automation\python_learning\day_13> 
+
+PS D:\Automation\python_learning\day_13\day13_prompting> pytest test_classifier_grid.py -v
+======================= test session starts =======================
+platform win32 -- Python 3.14.0, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\WELCOME\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+metadata: {'Python': '3.14.0', 'Platform': 'Windows-11-10.0.26200-SP0', 'Packages': {'pytest': '9.0.2', 'pluggy': '1.6.0'}, 'Plugins': {'anyio': '4.12.1', 'langsmith': '0.6.8', 'asyncio': '1.3.0', 'base-url': '2.1.0', 'cov': '7.0.0', 'html': '4.2.0', 'json-report': '1.5.0', 'metadata': '3.1.1', 'playwright': '0.7.2'}, 'Base URL': ''}
+rootdir: D:\Automation\python_learning\day_13\day13_prompting
+plugins: anyio-4.12.1, langsmith-0.6.8, asyncio-1.3.0, base-url-2.1.0, cov-7.0.0, html-4.2.0, json-report-1.5.0, metadata-3.1.1, playwright-0.7.2
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 10 items                                                 
+
+test_classifier_grid.py::test_classifier_response_contains_correct_category[Login page crashes with 500 error-bug] PASSED [ 10%]
+test_classifier_grid.py::test_classifier_response_contains_correct_category[Please add Hindi Languagae-feature] PASSED [ 20%]
+test_classifier_grid.py::test_classifier_response_contains_correct_category[How do I change my email address?-question] PASSED [ 30%]
+test_classifier_grid.py::test_classifier_response_contains_correct_category[The submit button does nothing on Firefox-bug] PASSED [ 40%]
+test_classifier_grid.py::test_classifier_response_contains_correct_category[Can you add a dark mode toggle?-feature] PASSED [ 50%]
+test_classifier_grid.py::test_classifier_response_contains_correct_category[Where is the user manual?-question] PASSED [ 60%]
+test_classifier_grid.py::test_classifier_response_contains_correct_category[Payment fails for cards from HDFC bank-bug] PASSED [ 70%]
+test_classifier_grid.py::test_classifier_response_contains_correct_category[Add export to PDF-feature] PASSED [ 80%]
+test_classifier_grid.py::test_classifier_response_contains_correct_category[What does P0 mean in the docs?-question] PASSED [ 90%]
+test_classifier_grid.py::test_classifier_response_contains_correct_category[Search results show items I deleted yesterday-bug] PASSED [100%]
+
+======================= 10 passed in 0.44s ========================
+PS D:\Automation\python_learning\day_13\day13_prompting> 
+
+problem 1:
+[Running] python -u "e:\Automation\python_learning\day_13\probelms.py"
+{2: 3, 3: 2, 4: 1}
+
+[Done] exited with code=0 in 0.077 seconds
+
+
+[Running] python -u "e:\Automation\python_learning\day_13\probelms.py"
+
+This summmary is for 5year-old child Jack Clark, who helps run a company called Anthropic, thinks we should be careful with computers that think for themselves, called artificial intelligence (AI). He says it's like driving a car with a gas pedal but no brake. We need to have a way to slow down or control these smart computers.
+
+Clark believes that people and the government should make rules to make sure we can trust AI and that it won't cause problems in our lives. 
+
+He mentioned a talking robot named Claude, which can write a lot of its own instructions and might be able to do it all by itself soon. That could change a lot of things!
+
+He also compared AI to how people learned to use oil safely a long time ago, needing smart rules so everyone can feel safe about it.
+
+Recently, Anthropic was happy about some new rules about AI from President Trump that didn't control companies too much.
+
+This summmary is for mchine learning reasearcher Jack Clark, co-founder of Anthropic, has urged the need to slow down the progress of artificial intelligence (AI) to prevent it from advancing without human control. He compared the current AI industry to having a gas pedal without a brake, emphasizing the importance of government policies to manage AI systems, which are becoming more powerful and influential in society.
+
+Clark highlighted that Anthropic's chatbot, Claude, currently operates with 80% of its own self-written code, and could reach 100% within two years, which would be significant. He suggested that society should develop new regulations, similar to those created during the oil boom, to ensure confidence in AI technology.
+
+Although he did not provide a specific method for creating a "brake pedal" for AI development, he stressed that thoughtful policy is essential. Recently, Anthropic supported a hands-off executive order on AI from President Trump, indicating the company's preference for less regulation at this time.
+
+
+PS E:\Automation\python_learning\day_13> pytest -v test_word_lengths.py
+======================== test session starts ========================
+platform win32 -- Python 3.14.0, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\WELCOME\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+metadata: {'Python': '3.14.0', 'Platform': 'Windows-11-10.0.26200-SP0', 'Packages': {'pytest': '9.0.2', 'pluggy': '1.6.0'}, 'Plugins': {'anyio': '4.12.1', 'langsmith': '0.6.8', 'asyncio': '1.3.0', 'base-url': '2.1.0', 'cov': '7.0.0', 'html': '4.2.0', 'json-report': '1.5.0', 'metadata': '3.1.1', 'playwright': '0.7.2'}, 'Base URL': ''}
+rootdir: E:\Automation\python_learning\day_13
+plugins: anyio-4.12.1, langsmith-0.6.8, asyncio-1.3.0, base-url-2.1.0, cov-7.0.0, html-4.2.0, json-report-1.5.0, metadata-3.1.1, playwright-0.7.2
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 4 items                                                    
+
+test_word_lengths.py::test_count_word_len[words0-expected0] PASSED [ 25%]
+test_word_lengths.py::test_count_word_len[words1-expected1] PASSED [ 50%]
+test_word_lengths.py::test_count_word_len[words2-expected2] PASSED [ 75%]
+test_word_lengths.py::test_count_word_len[words3-expected3] PASSED [100%]
+
+========================= 4 passed in 0.43s =========================

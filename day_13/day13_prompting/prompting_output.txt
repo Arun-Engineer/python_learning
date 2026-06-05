@@ -1,0 +1,28 @@
+[Running] python -u "d:\Automation\python_learning\day13_prompting\prompt_strategies.py"
+Ticket: The cart total doesn't match the sum of items when i have a coupon applied
+
+============================================================
+
+--- ZERO SHOT ---
+This support ticket should be classified as a **Bug**. It indicates that there is a discrepancy between the expected behavior (the cart total should match the sum of items after applying a coupon) and the actual behavior (the totals do not match). This suggests a potential issue in the cart calculation logic.
+
+--- FEW SHOT ---
+The ticket 'The cart total doesn't match the sum of items when I have a coupon applied' should be classified as a Bug.
+
+--- CHAIN OF THOUGHT ---
+Let's analyze the support ticket step by step:
+
+1. The user is reporting an issue that involves the cart total not matching the expected total after applying a coupon.
+2. This issue suggests that there is a discrepancy between the calculated total and the sum of the items, which indicates that something may not be working as intended.
+3. The mention of a coupon implies that the user expects a specific behavior when a coupon is applied�ideally, that the total should be recalculated to reflect any discounts.
+4. Since the issue is about incorrect behavior (the total calculation), it qualifies as a bug rather than a request for a new feature or merely a question seeking information.
+
+Considering all of this, the ticket clearly indicates a malfunction in the application, hence it should be classified as a bug.
+
+Answer: Bug
+
+--- ROLE PROMPT ---
+Bug
+
+[Done] exited with code=0 in 10.66 seconds
+
