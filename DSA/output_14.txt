@@ -1,0 +1,6 @@
+[Running] python -u "e:\Automation\python_learning\DSA\day_14.py"
+codes = ['A', 'B', 'A', 'C', 'C', 'A', 'B', 'B']
+k     = 2
+answer= 4
+
+[Done] exited with code=0 in 0.126 seconds
