@@ -1,0 +1,492 @@
+
+[Running] python -u "e:\Automation\python_learning\day_14\block_2.py"
+### Regression Checklist for Checkout Feature
+
+1. **User Authentication**
+   - Verify that users can log in successfully before proceeding to checkout.
+   - Check for errors on invalid login attempts.
+   - Ensure that session management is functioning (e.g., user remains logged in).
+
+2. **Product Selection**
+   - Validate that users can add products to the cart.
+   - Ensure users can remove products from the cart.
+   - Confirm that product quantity can be modified correctly.
+   - Check for accurate updates to the cart total after changes.
+
+3. **Cart Functionality**
+   - Verify that the cart displays the correct items, quantities, and total price.
+   - Test cart persistence across sessions (items remain in the cart after logout and login).
+  
+
+[Done] exited with code=0 in 9.681 seconds
+
+# Drill 1 
+
+[Running] python -u "e:\Automation\python_learning\day_14\drills.py"
+### Test Cases for Login Feature
+
+#### Test Case 1: Successful Login with Valid Credentials
+- **Precondition:** User has a registered account with valid credentials.
+- **Steps:**
+  1. Navigate to the login page.
+  2. Enter a valid username.
+  3. Enter a valid password.
+  4. Click on the "Login" button.
+- **Expected Result:** User should be successfully logged in and redirected to the dashboard/home page.
+
+#### Test Case 2: Successful Login with "Remember Me" Option
+- **Precondition:** User has a registered account with valid credentials.
+- **Steps:**
+  1. Navigate to the login page.
+  2. Enter a valid username.
+  3. Enter a valid password.
+  4. Check the "Remember Me" option.
+  5. Click on the "Login" button.
+- **Expected Result:** User should be successfully logged in and upon returning to the login page after closing the browser, the username should be pre-filled.
+
+#### Test Case 3: Successful Login with Password Reset
+- **Precondition:** User has a registered account and has previously reset their password.
+- **Steps:**
+  1. Navigate to the login page.
+  2. Enter the username.
+  3. Enter the new password (after reset).
+  4. Click on the "Login" button.
+- **Expected Result:** User should be successfully logged in
+1. **Invalid Username and Valid Password**
+   - Input an incorrect username while providing the correct password to verify that the login fails with an appropriate error message.
+
+2. **Valid Username and Invalid Password**
+   - Enter a correct username but an incorrect password to ensure the system displays an error indicating the login has failed.
+
+3. **Empty Username and Password Fields**
+   - Attempt to log in without entering any credentials (both username and password fields empty) to confirm that the system prompts the user for required fields.
+
+4. **SQL Injection Attempt**
+   - Input a SQL injection string (e.g., "' OR '1'='1") in the username and/or password fields to test that the system blocks this type of malicious input and prevents unauthorized access.
+1. **Edge Case 1: Login with an Expired Account**
+   - Input: Attempt to log in with credentials for an account that has been deactivated or expired.
+   - Expected Result: System displays an error message indicating that the account is no longer active.
+
+2. **Edge Case 2: Login with Maximum Length Username and Password**
+   - Input: Attempt to log in with a username and password that are at the maximum allowed character limits (e.g., 255 characters).
+   - Expected Result: System successfully logs in or displays a validation message if the inputs exceed the maximum length.
+
+[Done] exited with code=0 in 16.111 seconds
+
+# Drill 2
+
+[Running] python -u "e:\Automation\python_learning\day_14\drills.py"
+**Test Case 1: Attempt to Add Out-of-Stock Item to Cart**
+
+- **Test Case ID:** TC_CART_ADD_001
+- **Title:** Verify adding an out-of-stock item to the cart returns an appropriate error response.
+- **Pre-conditions:** The item to be added is known to be out of stock.
+- **Test Steps:**
+  1. Define the request URL: `https://www.jiomart.com/cart/add`
+  2. Set the HTTP method to POST.
+  3. Prepare the request body with the out-of-stock item details.
+     ```json
+     {
+       "item_id": "OUT_OF_STOCK_ITEM_ID",
+       "quantity": 1
+     }
+     ```
+  4. Send the POST request to the API endpoint.
+  
+- **Expected Result:**
+  - The API should return a status code of `400` (Bad Request) or an appropriate error code that indicates the item is out of stock.
+  - The response body should contain a clear error message, e.g., `"error": "Item is out of stock."`
+  
+- **Post-conditions:** None.
+
+[Done] exited with code=0 in 7.385 seconds
+
+# Drill: 3
+
+[Running] python -u "e:\Automation\python_learning\day_14\drills.py"
+Traceback (most recent call last):
+  File "e:\Automation\python_learning\day_14\drills.py", line 128, in <module>
+    result = run_prompt(client, "test_cases", values, system)
+  File "e:\Automation\python_learning\day_14\drills.py", line 106, in run_prompt
+    user_prompt = make_prompt(name, values)
+  File "e:\Automation\python_learning\day_14\drills.py", line 102, in make_prompt
+    return fill_template(prompt, values)
+  File "e:\Automation\python_learning\day_14\drills.py", line 97, in fill_template
+    return template.format(**values)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'feature'
+
+# Drill: 4
+PS E:\Automation\python_learning\day_14> python drills.py
+-> 1. test_cases
+-> 2. bug_report
+-> 3. regression_check
+-> 4. api_test
+Enter the choosen template: test_cases
+1. **Valid Credentials Test**: Verify that a user can successfully log in with correct username and password combinations, and is redirected to the dashboard.
+
+2. **Remember Me Functionality Test**: Check that if the "Remember Me" option is selected during the login process, the user remains logged in upon reopening the application after closure.
+
+3. **Login Through Third-Party Service Test**: Ensure that a user can log in using a third-party service (e.g., Google or Facebook) without any errors and is directed to their account dashboard.
+1. **Invalid Username and Password**: Attempt to log in using an incorrect username and password combination. Verify that an appropriate error message is displayed, indicating that the credentials are invalid.
+
+2. **Empty Username and Password Fields**: Try to log in with both the username and password fields left empty. Ensure that the system prevents login and prompts the user to fill in the required fields.
+
+3. **Exceeding Maximum Character Limit**: Enter a username and/or password that exceeds the maximum character limit allowed by the system. Check that the login attempt is unsuccessful and that an error message is presented.
+
+4. **SQL Injection Attack**: Input a SQL injection string (e.g., `"' OR '1'='1`) in the username and/or password fields. Confirm that the system does not process the input and rejects the login attempt without any security breach.
+1. **Test Case: Login with Empty Credentials**
+   - **Description:** Verify that the system handles the scenario correctly when both username and password fields are left empty during login.
+   - **Expected Result:** The system should display an error message indicating that both fields are required.
+
+2. **Test Case: Login with SQL Injection Attempt**
+   - **Description:** Test the login functionality by entering a SQL injection string in the username or password fields (e.g., `"' OR '1'='1";`).
+   - **Expected Result:** The system should gracefully handle the input without executing the SQL injection, and should return an authentication failure message. No database error messages should be exposed to the user.
+PS E:\Automation\python_learning\day_14> 
+
+# Drill 5: output for a "You are a terse senior QA engineer. Output only a numbered list, no explanations".
+
+
+[Running] python -u "e:\Automation\python_learning\day_14\drills.py"
+1. **Valid Credentials Test Case**: Verify that a user can successfully log in using a valid username and password combination. 
+
+2. **Remember Me Functionality Test Case**: Verify that selecting the "Remember Me" option and logging in allows the user to remain logged in after closing and reopening the browser.
+
+3. **Successful Login with Different Browsers Test Case**: Verify that a user can successfully log in using valid credentials across multiple web browsers (e.g., Chrome, Firefox, Safari).
+1. **Invalid Username**: Attempt to log in with a valid password but an incorrect username. Verify that the system displays an error message indicating that the username is not recognized.
+
+2. **Invalid Password**: Attempt to log in with a valid username but an incorrect password. Verify that the system displays an error message indicating that the password is incorrect.
+
+3. **Empty Credentials**: Try to log in without entering any username or password fields. Verify that the system prompts the user to fill in the required fields.
+
+4. **Account Lockout**: After multiple failed login attempts (e.g., entering wrong credentials five times), verify that the account is temporarily locked or that the user receives a message indicating that they've exceeded the maximum number of login attempts.
+1. **Edge Case: SQL Injection Attempt**  
+   **Description:** Test the login functionality by entering an SQL injection payload, such as `"' OR '1'='1";`, in the username and password fields to verify that the system properly sanitizes inputs and prevents unauthorized access.
+
+2. **Edge Case: Extremely Long Input Strings**  
+   **Description:** Enter extremely long strings (e.g., 256 characters or more) in both username and password fields to check if the system can handle input without crashing or failing, and ensures it enforces input length restrictions appropriately.
+1. Enhanced security measures for user accounts.  
+2. Streamlined user experience with quick access.  
+3. Supports multiple authentication methods (e.g., biometrics).  
+1. Inability to recover forgotten passwords.
+2. Slow response time during peak usage.
+3. Lack of multi-factor authentication options.
+4. Unclear error messages for failed login attempts.
+1. Login with an expired password.  
+2. Login with a non-existing username.
+
+
+"You are a friendly mentor. Explain your reasoning as you go."
+
+[Running] python -u "e:\Automation\python_learning\day_14\drills.py"
+1. Verify that a user can successfully log in with valid credentials (correct username and password).
+2. Verify that the user is redirected to the correct dashboard/homepage after a successful login.
+3. Verify that the "Remember Me" option keeps the user logged in after closing and reopening the browser.
+1. **Invalid Username/Password**: Attempt to log in using a valid username but an incorrect password. The system should display an error message indicating that the credentials are incorrect.
+
+2. **Empty Username/Password Fields**: Try to log in without entering any credentials in the username and password fields. The system should prompt the user to fill in the required fields.
+
+3. **SQL Injection Attack**: Input a malicious SQL query as the username or password (e.g., `'; DROP TABLE users; --`). The system should not execute the query and should display an error message without compromising database security.
+
+4. **Account Locked After Multiple Failed Attempts**: Attempt to log in with incorrect credentials multiple times (e.g., more than 5 attempts). The system should lock the account temporarily or until the user follows the account recovery process, displaying a relevant message.
+### Test Cases for Login Feature
+
+#### Edge Case 1: Login with Maximum Length Username and Password
+- **Test Case ID**: TC_LOGIN_001
+- **Description**: Test the login functionality with the maximum allowed length for both the username and password fields.
+- **Preconditions**: Confirm maximum character limits for username and password fields.
+- **Steps**:
+  1. Enter a username with the maximum length (e.g., 255 characters).
+  2. Enter a password with the maximum length (e.g., 255 characters).
+  3. Click the login button.
+- **Expected Result**: The system should either successfully log in or display an appropriate error message if the credentials are invalid.
+
+#### Edge Case 2: Login Attempt with SQL Injection Characters 
+- **Test Case ID**: TC_LOGIN_002
+- **Description**: Test the login functionality with SQL injection strings in both the username and password fields.
+- **Preconditions**: Ensure that the login system is vulnerable to SQL injection attacks.
+- **Steps**:
+  1. Enter a SQL injection string (e.g., `"' OR '1'='1"`) in the username field.
+  2. Enter a SQL injection string (e.g., `"' OR '1'='1"`) in the password field.
+  3. Click the login button.
+- **Expected Result**: The system should not allow login and should instead display an error
+Sure! Here are three positive aspects of a login feature:
+
+1. **Enhanced Security**: A login feature helps to protect user accounts and sensitive information by requiring authentication. This prevents unauthorized access and enhances overall security, which is especially important for applications handling personal data or financial transactions. 
+
+2. **Personalized Experience**: By enabling users to create an account and log in, businesses can tailor the user experience to individual preferences. This can include saved settings, recommended content, and a history of past interactions, making the platform more engaging and user-friendly.
+
+3. **User Engagement and Retention**: A login system encourages users to return regularly to the application, as they can pick up where they left off or access their saved data. This can help increase user loyalty, as customers feel more invested in their accounts and are likely to engage with the platform more frequently.
+
+These positives illustrate how a login feature not only safeguards users but also enhances their experience and fosters a deeper connection with the application.
+Sure! When considering the feature of "login," it's important to think about the potential negative aspects that may arise for users. Here are four negatives:
+
+1. **Security Vulnerabilities**: A login feature can be a target for cyberattacks, such as phishing or brute force attacks. If not designed with strong security measures (like two-factor authentication), it can expose user accounts to unauthorized access.
+
+   *Reasoning*: Users want to feel safe when they access their accounts. If a login system has a reputation for being insecure, it can discourage users from engaging with the platform, leading to a loss of trust.
+
+2. **User Frustration with Passwords**: Many users struggle to remember multiple passwords, leading to frustration. This could result in them delaying logging in or even abandoning the platform altogether.
+
+   *Reasoning*: The barrier of needing to remember passwords could create a negative experience, especially for casual users who prefer convenience over security. Solutions like password managers can help, but they aren't always user-friendly for everyone.
+
+3. **Account Lockout Issues**: If users enter their login credentials incorrectly too many times, they may find their account temporarily locked. This can be particularly frustrating, especially if users forget their password or if the system is too sensitive to failed attempts.
+
+   *Reasoning*: A lockout can create a negative user experience, resulting in dissatisfaction and potential loss of engagement with the platform. Users may feel that the system is punishing them rather than supporting their need
+Certainly! When considering edge cases for a login feature, it's important to think about scenarios that might not be typical but could still occur and potentially break the functionality or expose vulnerabilities. 
+
+Here are two edge cases to consider:
+
+### Edge Case 1: Extremely Long Input
+
+**Scenario:** A user tries to log in with an extremely long username or password. 
+
+**Reasoning:** Many systems have limits on the length of input fields. Testing with extremely long strings (e.g., 256 or 512 characters) can help to uncover potential buffer overflows, input truncation, or errors in how the system handles such data. It�s important for the application to either validate that inputs are within a reasonable length or handle them gracefully without failure.
+
+**Testing Steps:**
+1. Enter a username that is 512 characters long.
+2. Enter a password that exceeds the usual limit (e.g., 512 characters).
+3. Observe the system's response - it should either reject the input, truncate it gracefully, or show an appropriate error message.
+
+---
+
+### Edge Case 2: Concurrent Login Attempts from Multiple Devices
+
+**Scenario:** A user tries to log in to their account from multiple devices simultaneously.
+
+**Reasoning:** This case is relevant for understanding how the system manages sessions and logs users in/out. It's possible that the application may not handle concurrent logins well, leading to session conflicts, such as one login invalidating the other, or conflicting behavior in session state.
+
+**Testing Steps:
+
+
+capstone with step 3:
+
+[Running] python -u "e:\Automation\python_learning\day_14\capstone.py"
+==== STEP 1: TEST PLAN ====
+- **Email Delivery**: Verify that the email is sent successfully to the user�s registered email address.
+- **Email Content**: Check the accuracy and security of the password reset link in the email content.
+- **Link Expiration**: Test that the reset link expires after a certain period (e.g., 30 minutes).
+- **Link Validity**: Ensure that the link is valid only once and cannot be reused after a successful password reset.
+- **Input Fields**: Validate user input for the new password (e.g., length, complexity requirements).
+- **Error Handling**: Assess error messages for invalid or expired links and appropriate user guidance.
+- **Security Measures**: Check for vulnerabilities such as brute force attacks, link prediction, and account enumeration.
+- **User Experience**: Test the usability of the password reset process, including response times and mobile compatibility.
+- **Success Confirmation**: Verify that the user receives confirmation of a successful password reset via email or on-screen notification.
+- **Database Update**: Ensure that the new password is correctly updated in the database and users can log in with the new password.
+
+==== STEP 2: TEST CASES ====
+Here are the detailed test cases for each area in the provided test plan for the password reset feature:
+
+### 1. Email Delivery
+- **Test Case 1.1**: Verify Successful Email Delivery
+  - **Precondition**: User has a registered email address.
+  - **Steps**:
+    1. Trigger a password reset request.
+    2. Check the email inbox of the registered address.
+  - **Expected Result**: An email with the subject "Password Reset Request" is received within a specified time (e.g., 5 minutes).
+
+- **Test Case 1.2**: Verify Email Sent to Correct Address
+  - **Precondition**: User has a registered email address.
+  - **Steps**:
+    1. Trigger a password reset request.
+    2. Check the email address used for the reset link.
+  - **Expected Result**: The email is sent to the exact registered email address, not an incorrect one.
+
+### 2. Email Content
+- **Test Case 2.1**: Check Password Reset Link
+  - **Precondition**: User receives the password reset email.
+  - **Steps**:
+    1. Open the received email.
+    2. Click on the password reset link.
+  - **Expected Result**: Redirects to the password reset page and the link is correctly formatted (contains the token).
+
+- **Test Case 2.2**: Validate Email Content
+
+[Done] exited with code=0 in 10.43 seconds
+
+# capstone
+ expiration (timing and invalidation)
+- Link security (token validation)
+- User interface of the password reset page
+- Password strength validation
+- Error handling (invalid link, expired link, etc.)
+- Successful password reset confirmation
+- User experience after password reset (redirects, messages)
+- Integration with existing user account database
+- Security measures (rate limiting, brute force prevention)
+- Accessibility compliance of the password reset process
+
+==== STEP 2: TEST CASES ====
+### Test Cases for Password Reset Feature  
+
+---
+
+#### 1. Email Link Generation  
+**Test Case ID**: TC_PR_001  
+**Description**: Verify that a password reset email link is generated and sent successfully.  
+**Preconditions**: The user account exists and is associated with a valid email address.  
+**Steps**:  
+1. Request a password reset from the login page.  
+2. Provide a valid registered email address.  
+3. Submit the password reset request.  
+**Expected Result**: An email with a password reset link is received at the provided email address.  
+
+---
+
+#### 2. Email Delivery (Spam/Junk Folder Considerations)  
+**Test Case ID**: TC_PR_002  
+**Description**: Ensure that the password reset email does not end up in the spam/junk folder.  
+**Preconditions**: A valid email is registered for the user.  
+**Steps**:  
+1. Request a password reset.  
+2. Check the inbox and the spam/junk folder for the email.  
+**Expected Result**: The email should arrive in the inbox and not in the spam/junk folder.  
+
+---
+
+#### 3. Link Expiration (Timing and Invalidation)  
+**Test Case ID**: TC_PR_003  
+**Description**: Verify the expiration of the password reset link after a defined time period.  
+**Preconditions**: A password reset email with a valid link has been sent.  
+**Steps**:  
+1. Wait for the link expiration time (e.g., 15 minutes).  
+2. Attempt to access the link after expiration.  
+**Expected Result**: The link should display an error message indicating it has expired.  
+
+---
+
+#### 4. Link Security (Token Validation)  
+**Test Case ID**: TC_PR_004  
+**Description**: Ensure the reset link token is valid and securely generated.  
+**Preconditions**: User has requested a password reset.  
+**Steps**:  
+1. Capture the reset link token from the email.  
+2. Alter the token in the URL.  
+3. Attempt to use the modified link to access the reset page.  
+**Expected Result**: An error message should be displayed indicating an invalid token.  
+
+---
+
+#### 5. User Interface of the Password Reset Page  
+**Test Case ID**: TC_PR_005  
+**Description**: Validate the user interface elements on the password reset page.  
+**Preconditions**: User accesses the password reset link.  
+**Steps**:  
+1. Open the password reset URL from the email.  
+2. Verify the presence of input fields, labels, buttons, and messages.  
+**Expected Result**: The page should display all necessary UI elements clearly and correctly.  
+
+---
+
+#### 6. Password Strength Validation  
+**Test Case ID**: TC_PR_006  
+**Description**: Validate that the new password meets strength requirements.  
+**Preconditions**: User is on the password reset page.  
+**Steps**:  
+1. Enter a weak password (e.g., "123456").  
+2. Try to submit the form.  
+3. Repeat with various weak passwords until a strong one is entered.  
+**Expected Result**: The page should provide feedback about password strength and accept only strong passwords.  
+
+---
+
+#### 7. Error Handling (Invalid Link, Expired Link, etc.)  
+**Test Case ID**: TC_PR_007  
+**Description**: Ensure appropriate error messages are shown for invalid and expired links.  
+**Preconditions**: User attempts to use invalid or expired links.  
+**Steps**:  
+1. Access an expired link.  
+2. Access a malformed link.  
+3. Access a valid link and enter incorrect data.  
+**Expected Result**: The user receives clear, descriptive error messages for each scenario.  
+
+---
+
+#### 8. Successful Password Reset Confirmation  
+**Test Case ID**: TC_PR_008  
+**Description**: Validate that the system confirms a successful password reset.  
+**Preconditions**: User has submitted a valid new password through the reset page.  
+**Steps**:  
+1. Enter a valid new password and confirm it.  
+2. Submit the form.  
+**Expected Result**: User is redirected to a confirmation page with success messaging.  
+
+---
+
+#### 9. User Experience After Password Reset (Redirects, Messages)  
+**Test Case ID**: TC_PR_009  
+**Description**: Verify the user experience following a successful password reset.  
+**Preconditions**: The password has been reset successfully.  
+**Steps**:  
+1. Observe the redirection URL after the reset process.  
+2. Review the displayed confirmation and messaging.  
+**Expected Result**: Users are redirected to the login page with a clear success message.  
+
+---
+
+#### 10. Integration with Existing User Account Database  
+**Test Case ID**: TC_PR_010  
+**Description**: Ensure the reset password is correctly reflected in the user account database.  
+**Preconditions**: The user has reset their password.  
+**Steps**:  
+1. Reset the password using the password reset process.  
+2. Query the user account database to verify the new password hash and timestamp.  
+**Expected Result**: The password change is accurately reflected in the database records.  
+
+---
+
+#### 11. Security Measures (Rate Limiting, Brute Force Prevention)  
+**Test Case ID**: TC_PR_011  
+**Description**: Verify that security measures are in place to prevent abuse of the password reset process.  
+**Preconditions**: The system is operational.  
+**Steps**:  
+1. Attempt to request password reset multiple times from the same IP address.  
+2. Measure system response and any lockout after multiple attempts.  
+**Expected Result**: The system should enforce rate limits and prevent further requests after a defined threshold.  
+
+---
+
+#### 12. Accessibility Compliance of the Password Reset Process  
+**Test Case ID**: TC_PR_012  
+**Description**: Validate that the password reset process complies with accessibility standards (e.g., WCAG).  
+**Preconditions**: User is on the password reset page.  
+**Steps**:  
+1. Evaluate the page using accessibility checkers or manual checks for compliance with color contrast, keyboard navigation, screen reader functionality
+
+==== STEP 3: TOP PRIORITY TEST CASES ====
+The three highest priority test cases for the Password Reset Feature are:
+
+1. **Email Link Generation**  
+   **Test Case ID**: TC_PR_001  
+   **Description**: Verify that a password reset email link is generated and sent successfully.  
+   **Rationale**: This is the initial step in the password reset process. If the email link isn't generated correctly, the user cannot proceed to reset the password.
+
+2. **Link Security (Token Validation)**  
+   **Test Case ID**: TC_PR_004  
+   **Description**: Ensure the reset link token is valid and securely generated.  
+   **Rationale**: It's critical to ensure that the token is secure and tampering is detected to prevent unauthorized password resets.
+
+3. **Successful Password Reset Confirmation**  
+   **Test Case ID**: TC_PR_008  
+   **Description**: Validate that the system confirms a successful password reset.  
+   **Rationale**: This validates the end of the password reset process, ensuring that after entering the new password, the user receives confirmation, which is crucial for user satisfaction and security.
+
+[Done] exited with code=0 in 29.364 seconds
+
+
+collected 4 items                                                              
+
+test_factcheck.py::test_is_factual_passes_when_fact_present PASSED       [ 25%]
+test_factcheck.py::test_is_factual_fails_when_fact_missig PASSED         [ 50%]
+test_factcheck.py::test_ask_fact_uses_the_client PASSED                  [ 75%]
+test_factcheck.py::test_answers_match_knowledge_base PASSED              [100%]
+
+============================== 4 passed in 0.80s ==============================
+PS E:\Automation\python_learning\day_14> 
+
+collected 5 items                                                              
+
+test_factcheck.py::test_is_factual_passes_when_fact_present PASSED       [ 20%]
+test_factcheck.py::test_is_factual_fails_when_fact_missig PASSED         [ 40%]
+test_factcheck.py::test_ask_fact_uses_the_client PASSED                  [ 60%]
+test_factcheck.py::test_answers_match_knowledge_base PASSED              [ 80%]
+test_factcheck.py::test_catches_wrong_answer PASSED     
