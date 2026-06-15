@@ -490,3 +490,20 @@ test_factcheck.py::test_is_factual_fails_when_fact_missig PASSED         [ 40%]
 test_factcheck.py::test_ask_fact_uses_the_client PASSED                  [ 60%]
 test_factcheck.py::test_answers_match_knowledge_base PASSED              [ 80%]
 test_factcheck.py::test_catches_wrong_answer PASSED     
+
+[Running] python -u "e:\Automation\python_learning\day_14\problems.py"
+500
+
+[Done] exited with code=0 in 0.091 seconds
+
+# B2 Safe template fil(today + the 8 word rule)
+
+PROMPT_TEMPLATE = {
+    "name" : "Greet using this name:{name}"
+}
+
+def safe_fill(template: str, values: dict) ->str:
+    try:
+        return template.format(**values)
+    except KeyError as e:
+        return f"Key value is missing{"name": name}"
