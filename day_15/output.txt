@@ -1,0 +1,137 @@
+# block2 
+[Running] python -u "e:\Automation\python_learning\day_15\block2.py"
+Used WordCount -> 8
+Used Shout -> VERIFY LOGIN WITH VALID CREDENTIALS
+Used CharCount -> 36
+
+[Done] exited with code=0 in 0.22 seconds
+
+# Drill 1
+
+[Running] python -u "e:\Automation\python_learning\day_15\drills.py"
+Tool used Shout --> APP CRASHES ON LOGIN WHEN PASSWORD IS EMPTY
+Tool used Shout --> VERIFY LOGIN WITH VALID CREDENTIALS
+Tool used Reverse --> nigol
+
+[Done] exited with code=0 in 0.383 seconds
+
+# Drill 2
+
+[Running] python -u "e:\Automation\python_learning\day_15\drills.py"
+Available Tools:
+wordcount --> calculate number of words in the input
+shout --> Conver the input into uppercase
+reverse --> Reverse the given input
+
+Tool used WordCount --> 8
+
+Available Tools:
+wordcount --> calculate number of words in the input
+shout --> Conver the input into uppercase
+reverse --> Reverse the given input
+
+Tool used Shout --> VERIFY LOGIN WITH VALID CREDENTIALS
+
+Available Tools:
+wordcount --> calculate number of words in the input
+shout --> Conver the input into uppercase
+reverse --> Reverse the given input
+
+Tool used Reverse --> nigol
+
+# Drill 3
+
+[Running] python -u "e:\Automation\python_learning\day_15\drills.py"
+Available Tools:
+wordcount --> calculate number of words in the input
+shout --> Conver the input into uppercase
+reverse --> Reverse the given input
+
+Tool used WordCount --> 8
+
+Available Tools:
+wordcount --> calculate number of words in the input
+shout --> Conver the input into uppercase
+reverse --> Reverse the given input
+
+Tool used Shout --> VERIFY LOGIN WITH VALID CREDENTIALS
+
+Available Tools:
+wordcount --> calculate number of words in the input
+shout --> Conver the input into uppercase
+reverse --> Reverse the given input
+
+Tool used Reverse --> nigol
+
+Traceback (most recent call last):
+  File "e:\Automation\python_learning\day_15\drills.py", line 192, in <module>
+    print(run_agent(q4, "How are you?"))
+          ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "e:\Automation\python_learning\day_15\drills.py", line 172, in run_agent
+    tool = TOOLS[tool_name]
+           ~~~~~^^^^^^^^^^^
+KeyError: 'Translate'
+
+# Drill 4
+[Running] python -u "e:\Automation\python_learning\day_15\drills.py"
+Available Tools:
+wordcount --> calculate number of words in the input
+shout --> Conver the input into uppercase
+reverse --> Reverse the given input
+
+Tool used WordCount --> 8
+
+Available Tools:
+wordcount --> calculate number of words in the input
+shout --> Conver the input into uppercase
+reverse --> Reverse the given input
+
+Tool used Shout --> VERIFY LOGIN WITH VALID CREDENTIALS
+
+Unknown tool: Translate
+Available Tools:
+wordcount --> calculate number of words in the input
+shout --> Conver the input into uppercase
+reverse --> Reverse the given input
+
+Tool used Reverse --> nigol
+
+# Drill 5
+AGENT TOOL SELECTION CONFIDENCE CHECK
+==================================================
+How many words here?                -> WordCount  Correct
+How many words in this text?        -> WordCount  Correct
+Make this loud                      -> Shout      Correct
+Make this title stand out           -> Shout      Correct
+==================================================
+Passed: 4 | Failed: 0 | Total: 4
+==================================================
+
+[Done] exited with code=0 in 0.114 seconds
+
+[Running] python -u "e:\Automation\python_learning\day_15\capstone.py"
+WordCount -> 8
+Unknown Tool: CharCount
+Shout -> APP CRASHES ON LOGIN WHEN PASSWORD IS EMPTY
+
+[Done] exited with code=0 in 0.216 seconds
+
+collected 3 items                                               
+
+test_agent.py::test_choose_tool_picks_wordcount PASSED    [ 33%]
+test_agent.py::test_choose_tool_defaults_to_shout PASSED  [ 66%]
+test_agent.py::test_run_agent_uses_chosen_tool PASSED     [100%]
+
+====================== 3 passed in 0.11s =======================
+with unknown tool capturing
+PS E:\Automation\python_learning\day_15> 
+
+collected 4 items                      
+
+test_agent.py::test_choose_tool_picks_wordcount PASSED [ 25%]
+test_agent.py::test_choose_tool_defaults_to_shout PASSED [ 50%]
+test_agent.py::test_run_agent_uses_chosen_tool PASSED [ 75%]
+test_agent.py::test_agent_use_chosen_tool PASSED [100%]
+
+========== 4 passed in 0.07s ==========
+PS E:\Automation\python_learning\day_15
