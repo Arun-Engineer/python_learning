@@ -1,0 +1,11 @@
+[Running] python -u "e:\Automation\python_learning\DSA\day_16.py"
+30
+30
+
+[Done] exited with code=0 in 0.126 seconds
+
+[Running] python -u "e:\Automation\python_learning\DSA\day_16.py"
+3
+2
+
+[Done] exited with code=0 in 0.132 seconds

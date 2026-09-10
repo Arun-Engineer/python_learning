@@ -1,0 +1,21 @@
+[Running] python -u "e:\Automation\python_learning\day_16\block1.py"
+Used WordCount -> 5
+Used Shout -> CHECKOUT BUTTON BROKEN
+Used CharCount -> 12
+
+[Done] exited with code=0 in 1.916 seconds
+
+[Running] python -u "e:\Automation\python_learning\day_16\block1_updated.py"
+Used WordCount -> 4
+Used Shout -> VERIFY LOGIN
+No suitable tool is available.
+No suitable tool is available.
+
+[Done] exited with code=0 in 6.811 seconds
+
+
+[Running] python -u "e:\Automation\python_learning\day_16\block2.py"
+The text in uppercase is: LOGIN FAILS ON EMPTY PASSWORD. It has 5 words.
+The text to work on is: login fails on empty password.
+Used Shout (login fails on empty password. -> LOGIN FAILS ON EMPTY PASSWORD.)
+Used WordCount (LOGIN FAILS ON EMPTY PASSWORD. -> 5)
