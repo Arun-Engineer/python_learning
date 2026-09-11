@@ -19,3 +19,114 @@ The text in uppercase is: LOGIN FAILS ON EMPTY PASSWORD. It has 5 words.
 The text to work on is: login fails on empty password.
 Used Shout (login fails on empty password. -> LOGIN FAILS ON EMPTY PASSWORD.)
 Used WordCount (LOGIN FAILS ON EMPTY PASSWORD. -> 5)
+
+#drill1
+---Answer---
+4
+
+-------History------
+The text to work on this is: login password is success
+Used WordCount (login password is success -> 4)
+
+# Drill 2 - A three tool task
+
+(.venv) PS C:\Users\arunp\python_learning> & c:\Users\arunp\python_learning\.venv\Scripts\python.exe c:/Users/arunp/python_learning/day_16/block3.py
+---Answer---
+4
+
+-------History--
+The text to work on this is: login password is success
+Used Reverse (login password is success -> sseccus si drowssap nigol)
+Used Shout (sseccus si drowssap nigol -> SSECCUS SI DROWSSAP NIGOL)
+Used WordCount (SSECCUS SI DROWSSAP NIGOL -> 4)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+
+
+(.venv) PS C:\Users\arunp\python_learning> & c:\Users\arunp\python_learning\.venv\Scripts\python.exe c:/Users/arunp/python_learning/day_16/block3.py
+---Answer---
+le mot de passe de connexion est un succès
+
+-------History--
+The text to work on this is: login password is success
+
+# drill 4
+
+n_learning/day_16/block3.py
+---Answer---
+Stopped reached max_step without a final answer.
+
+# drill 5 - 
+(.venv) PS C:\Users\arunp\python_learning> & c:\Users\arunp\python_learning\.venv\Scripts\python.exe c:/Users/arunp/python_learning/day_16/block3.py                               
+[Step 1] Reverse(login password is success) -> sseccus si drowssap nigol
+[Step 2] Shout(sseccus si drowssap nigol) -> SSECCUS SI DROWSSAP NIGOL
+4
+
+-------History--
+The text to work on this is: login password is success
+Used Reverse (login password is success -> sseccus si drowssap nigol)
+Used Shout (sseccus si drowssap nigol -> SSECCUS SI DROWSSAP NIGOL)
+Used WordCount (SSECCUS SI DROWSSAP NIGOL -> 4)
+
+# block 4 capstone
+(.venv) PS C:\Users\arunp\python_learning> & c:\Users\arunp\python_learning\.venv\Scripts\python.exe c:/Users/arunp/python_learning/day_16/block4.py
+Final Answer: The test areas for the feature are:
+- password reset via email: happy_path
+- password reset via email: empty_input
+- password reset via email: invalid_input
+- password reset via email: security
+
+I produced 4 areas.
+
+pytest
+
+platform win32 -- Python 3.10.6, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\arunp\python_learning\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\arunp\python_learning\day_16
+plugins: anyio-4.15.1
+collected 1 item                                                                                                       
+
+test_blocks.py::test_choose_tool PASSED                                                                          [100%]
+
+================================================== 1 passed in 8.09s ==================================================
+(.venv) PS C:\Users\arunp\python_learning\day_16> 
+
+Shout pytest
+================================================= test session starts =================================================
+platform win32 -- Python 3.10.6, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\arunp\python_learning\day_16
+plugins: anyio-4.15.1
+collected 1 item                                                                                                       
+
+test_blocks.py .                                                                                                 [100%]
+
+================================================= 1 passed in 10.09s ==================================================
+(.venv) PS C:\Users\arunp\python_learning\day_16> 
+
+test 3
+
+================================================ test session starts =================================================
+platform win32 -- Python 3.10.6, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\arunp\python_learning\day_16
+plugins: anyio-4.15.1
+collected 1 item                                                                                                       
+
+test_blocks.py .                                                                                                 [100%]
+
+================================================== 1 passed in 7.31s ==================================================
+(.venv) PS C:\Users\arunp\python_learning\day_16> 
+
+qa red team test output of test_block2.py
+================================================= test session starts =================================================
+platform win32 -- Python 3.10.6, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\arunp\python_learning\day_16
+plugins: anyio-4.15.1
+collected 1 item                                                                                                       
+
+test_block2.py .                                                                                                 [100%]
+
+================================================== 1 passed in 7.02s ==================================================
+(.venv) PS C:\Users\arunp\python_learning\day_16>                                                                     [100%]
+
+b1 output
+(.venv) PS C:\Users\arunp\python_learning\day_16> & c:\Users\arunp\python_learning\.venv\Scripts\python.exe c:/Users/arunp/python_learning/day_16/b1_dsa.py
+40
+(.venv) PS C:\Users\arunp\python_learning\day_16> 
