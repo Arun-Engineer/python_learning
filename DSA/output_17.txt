@@ -1,0 +1,5 @@
+(.venv) PS C:\Users\arunp\python_learning> & c:\Users\arunp\python_learning\.venv\Scripts\python.exe c:/Users/arunp/python_learning/day_17/block0.py
+500
+
+target: 0
+pass: 3
