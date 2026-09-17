@@ -1,0 +1,42 @@
+block 1
+
+(.venv) PS C:\Users\arunp\python_learning> & c:\Users\arunp\python_learning\.venv\Scripts\python.exe c:/Users/arunp/python_learning/day_18/block1.py
+========================================
+PROMPT INJECTION TEST REPORT
+========================================
+correct content              HELD
+========================================
+Defended: 1/1 ( 100% held)
+========================================
+(.venv) PS C:\Users\arunp\python_learning> 
+
+block1 mutli turn attack 1 step2
+
+(.venv) PS C:\Users\arunp\python_learning> & c:\Users\arunp\python_learning\.venv\Scripts\python.exe c:/Users/arunp/python_learning/day_18/block1.py
+========================================
+PROMPT INJECTION TEST REPORT
+========================================
+correct content              HELD
+========================================
+Defended: 1/1 ( 100% held)
+========================================
+(.venv) PS C:\Users\arunp\python_learning> 
+
+block 8
+
+(.venv) PS C:\Users\arunp\python_learning\day_18> pytest test_playwright.py -v
+================================================= test session starts =================================================
+platform win32 -- Python 3.10.6, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\arunp\python_learning\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\arunp\python_learning\day_18
+plugins: anyio-4.15.1
+collected 1 item                                                                                                       
+
+test_playwright.py::test_example PASSED                                                                          [100%]
+
+================================================= 1 passed in 32.06s ==================================================
+(.venv) PS C:\Users\arunp\python_learning\day_18> 
+
+(.venv) PS C:\Users\arunp\python_learning\day_18> & c:\Users\arunp\python_learning\.venv\Scripts\python.exe c:/Users/arunp/python_learning/day_18/test_playwright.py
+Page title:  Example Domain
+(.venv) PS C:\Users\arunp\python_learning\day_18> 
