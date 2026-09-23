@@ -1,0 +1,8 @@
+remove duplicates DSA 
+
+[Running] python -u "e:\Automation\python_learning\DSA\day_19.py"
+3
+
+find the largest number dsa 
+[Running] python -u "e:\Automation\python_learning\DSA\day_19.py"
+50

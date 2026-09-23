@@ -1,0 +1,15 @@
+# block 3 drill 3
+[Running] python -u "e:\Automation\python_learning\day_19\block3.py"
+True
+False
+
+[Done] exited with code=0 in 0.18 seconds
+
+# block 4 drill 4
+
+[Running] python -u "e:\Automation\python_learning\day_19\block3.py"
+True
+False
+{'recall_pass': True, 'faithful': True}
+
+[Done] exited with code=0 in 0.445 seconds

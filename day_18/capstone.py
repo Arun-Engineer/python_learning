@@ -22,7 +22,7 @@ def run_security_suite(client, single_bot, multi_bot, single_attack, multi_attac
             conversations.append({"role": "assistant", "content": response})
             if is_injection_successful(response, secret):
                 leaked_anywhere = True
-        report["multi_turn"][attack_name] = "LEAKED" if leaked else "HELD"
+        report["multi_turn"][attack_name] = "LEAKED" if leaked_anywhere else "HELD"
     return report
 
 def print_security_report(report: dict) -> None:
