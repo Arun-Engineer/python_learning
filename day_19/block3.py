@@ -4,18 +4,15 @@ def precision_at_5(retrieved_docs: list, relevant_docs: list) -> int:
     count = 0
 
     for doc in top_5:
-        if relevant_docs in doc:
+        if doc in relevant_docs:
             count += 1
     return count
 
 # Drill 2
 def did_retrieve_anything(retrieved_docs: list) -> int:
-    docs = retrieved_docs[:5]
-
-    if docs == 0:
+    if not retrieved_docs:
         return False
-    else:
-        return "Document retrieved."
+    return True
 
 # Drill 3
 def is_faithful(answer, source_doc):
@@ -37,7 +34,7 @@ def test_recall_at_5(retrieved_docs: list, correct_doc: str)-> bool:
 def evaluate_rag(retrieved_docs, correct_doc, answer, source_doc):
     document = did_retrieve_anything(retrieved_docs)
 
-    if document == "Document retrieved.":
+    if document == True:
         recall_pass = test_recall_at_5(retrieved_docs, correct_doc)
         faithful = is_faithful(answer, source_doc)
 

@@ -5,7 +5,7 @@ False
 
 [Done] exited with code=0 in 0.18 seconds
 
-# block 4 drill 4
+# block 3 drill 4
 
 [Running] python -u "e:\Automation\python_learning\day_19\block3.py"
 True
@@ -13,3 +13,42 @@ False
 {'recall_pass': True, 'faithful': True}
 
 [Done] exited with code=0 in 0.445 seconds
+
+# block 4 mini capstone
+
+
+[Running] python -u "e:\Automation\python_learning\day_19\block4.py"
+========================================
+RAG EVALUATION RESULT
+========================================
+ PASS recall_pass: True
+ PASS faithful: True
+========================================
+
+[Done] exited with code=0 in 0.435 seconds
+
+# pytest 
+PS E:\Automation\python_learning\day_19> pytest test_rag.py -v
+============================== test session starts ==============================
+platform win32 -- Python 3.14.0, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\WELCOME\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+metadata: {'Python': '3.14.0', 'Platform': 'Windows-11-10.0.26200-SP0', 'Packages': {'pytest': '9.0.2', 'pluggy': '1.6.0'}, 'Plugins': {'anyio': '4.12.1', 'langsmith': '0.6.8', 'asyncio': '1.3.0', 'base-url': '2.1.0', 'cov': '7.0.0', 'html': '4.2.0', 'json-report': '1.5.0', 'metadata': '3.1.1', 'playwright': '0.7.2'}, 'Base URL': ''}
+rootdir: E:\Automation\python_learning\day_19
+plugins: anyio-4.12.1, langsmith-0.6.8, asyncio-1.3.0, base-url-2.1.0, cov-7.0.0, html-4.2.0, json-report-1.5.0, metadata-3.1.1, playwright-0.7.2
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 6 items                                                                
+
+test_rag.py::test_recall[retrieved0-policy_7-True] PASSED                  [ 16%]
+test_rag.py::test_recall[retrieved1-policy_7-False] PASSED                 [ 33%]
+test_rag.py::test_recall[retrieved2-missing-False] PASSED                  [ 50%]
+test_rag.py::test_faithfullness[store opens at 9am-the store opens at 9am daily-True] PASSED [ 66%]
+test_rag.py::test_faithfullness[store opens at 9am and closes at midnight-the store opens at 9am-False] PASSED [ 83%]
+test_rag.py::test_faithfullness[refunds in 7 days-refunds are processed in 7 days-True] PASSED [100%]
+
+=============================== 6 passed in 0.12s ===============================
+PS E:\Automation\python_learning\day_19> 
+
+playwright_2.py
+PS E:\Automation\python_learning\day_19> py playwright_2.py 
+Search done, title: <bound method Page.title of <Page url='https://duckduckgo.com/?ia=web&origin=funnel_home_website&t=h_&q=Playwright+testing'>>
+PS E:\Automation\python_learning\day_19> 
