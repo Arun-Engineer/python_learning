@@ -1,0 +1,47 @@
+[Running] python -u "e:\Automation\python_learning\day_20\block1.py"
+True
+
+[Done] exited with code=0 in 0.378 seconds
+
+
+[Running] python -u "e:\Automation\python_learning\day_20\block2.py"
+========================================
+RAG SCORED EVALUATION REPORT
+========================================
+ recall_pass --> True
+ faithfulness_ score --> 0.83
+ faithful_enough --> True
+========================================
+
+# block 3 Drill 1
+[Running] python -u "e:\Automation\python_learning\day_20\block3.py"
+3
+
+[Done] exited with code=0 in 0.422 seconds
+
+# Drill 2 
+
+
+[Running] python -u "e:\Automation\python_learning\day_20\block3.py"
+91 -> highest_score using max function
+91 -> highest_scores using comparison method
+
+[Done] exited with code=0 in 0.406 seconds 
+
+# Drill 3
+[Running] python -u "e:\Automation\python_learning\day_20\block3.py"
+True
+
+[Done] exited with code=0 in 0.328 seconds
+
+# Drill 4
+[Running] python -u "e:\Automation\python_learning\day_20\block3.py"
+True
+False
+
+[Done] exited with code=0 in 0.39 seconds
+
+# Drill 5
+[Running] python -u "e:\Automation\python_learning\day_20\block3.py"
+True
+False
