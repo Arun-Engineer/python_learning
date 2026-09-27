@@ -63,15 +63,31 @@
 # Drill 5 -> Write has_pair_summing(nums: list, target: int) -> bool - return True if ANY two numbers add to target(just True/False, not positions).
 
 def has_pair_summing(nums: list, target: int) -> bool:
-
-    needed = target - nums[0]
+    seen = set()
 
     for i in nums:
-        if needed + i != target:
-            needed = i
-    return needed + i == target
+        needed = target - i
+        if needed in seen:
+            return True
+        seen.add(i)
+    return False
 
 nums1 = [1, 5, 3]
 nums2 = [1, 2, 4]
 print(has_pair_summing(nums1, 8))
 print(has_pair_summing(nums2, 10))
+
+def has_pair_summng(nums: list, target:int) -> bool:
+    seen = {}
+
+    for i in nums:
+        needed = target - i
+        if needed in seen:
+            return True
+        seen[i] = True
+    return False
+
+nums1 = [1, 5, 3]
+nums2 = [1, 2, 4]
+print(has_pair_summng(nums1, 8))
+print(has_pair_summng(nums2, 10))
