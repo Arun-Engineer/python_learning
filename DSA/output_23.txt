@@ -1,0 +1,6 @@
+[Running] python -u "e:\Automation\python_learning\DSA\day_23.py"
+{'name': 'test_search', 'duration': 9.1}
+{'name': 'test_login', 'duration': 2.5}
+{'name': 'test_logout', 'duration': 0.8}
+
+[Done] exited with code=0 in 0.391 seconds
